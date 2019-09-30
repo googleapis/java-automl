@@ -56,8 +56,8 @@ project set up. You will also need to set up the local development environment b
 
 ### Installation and setup
 
-You'll need to obtain the `automl` library.  See the [Quickstart](#quickstart) section
-to add `automl` as a dependency in your code.
+You'll need to obtain the `google-cloud-automl` library.  See the [Quickstart](#quickstart) section
+to add `google-cloud-automl` as a dependency in your code.
 
 ## Troubleshooting
 
