@@ -2,7 +2,6 @@
 
 Java idiomatic client for [Cloud Auto ML][api-reference].
 
-[![Kokoro CI][kokoro-badge-image]][kokoro-badge-link]
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
 
