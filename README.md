@@ -13,7 +13,7 @@ Java idiomatic client for [Cloud Auto ML][api-reference].
 
 ## Quickstart
 
-[//]: # ({x-version-update-start:automl:released})
+[//]: # ({x-version-update-start:google-cloud-automl:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
