@@ -28,9 +28,25 @@ public final class DataItems {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1_Image_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1_Image_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_automl_v1_TextSnippet_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_automl_v1_TextSnippet_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1_DocumentDimensions_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1_DocumentDimensions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1_Document_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1_Document_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1_Document_Layout_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1_Document_Layout_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_automl_v1_ExamplePayload_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -45,19 +61,52 @@ public final class DataItems {
   static {
     java.lang.String[] descriptorData = {
       "\n\'google/cloud/automl/v1/data_items.prot"
-          + "o\022\026google.cloud.automl.v1\032\037google/cloud/"
-          + "automl/v1/io.proto\032\031google/protobuf/any."
-          + "proto\032\036google/protobuf/duration.proto\032\034g"
-          + "oogle/protobuf/struct.proto\032\034google/api/"
-          + "annotations.proto\"F\n\013TextSnippet\022\017\n\007cont"
-          + "ent\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\t\022\023\n\013content_"
-          + "uri\030\004 \001(\t\"X\n\016ExamplePayload\022;\n\014text_snip"
-          + "pet\030\002 \001(\0132#.google.cloud.automl.v1.TextS"
-          + "nippetH\000B\t\n\007payloadB\252\001\n\032com.google.cloud"
-          + ".automl.v1P\001Z<google.golang.org/genproto"
-          + "/googleapis/cloud/automl/v1;automl\252\002\026Goo"
-          + "gle.Cloud.AutoML.V1\312\002\026Google\\Cloud\\AutoM"
-          + "L\\V1\352\002\031Google::Cloud::AutoML::V1b\006proto3"
+          + "o\022\026google.cloud.automl.v1\032%google/cloud/"
+          + "automl/v1/geometry.proto\032\037google/cloud/a"
+          + "utoml/v1/io.proto\032)google/cloud/automl/v"
+          + "1/text_segment.proto\032\031google/protobuf/an"
+          + "y.proto\032\036google/protobuf/duration.proto\032"
+          + "\034google/protobuf/struct.proto\032\034google/ap"
+          + "i/annotations.proto\"\205\001\n\005Image\022\025\n\013image_b"
+          + "ytes\030\001 \001(\014H\000\022F\n\022image_input_config\030\007 \001(\013"
+          + "2(.google.cloud.automl.v1.ImageInputConf"
+          + "igH\000\022\025\n\rthumbnail_uri\030\004 \001(\tB\006\n\004data\"F\n\013T"
+          + "extSnippet\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_type"
+          + "\030\002 \001(\t\022\023\n\013content_uri\030\004 \001(\t\"\352\001\n\022Document"
+          + "Dimensions\022N\n\004unit\030\001 \001(\0162@.google.cloud."
+          + "automl.v1.DocumentDimensions.DocumentDim"
+          + "ensionUnit\022\r\n\005width\030\002 \001(\002\022\016\n\006height\030\003 \001("
+          + "\002\"e\n\025DocumentDimensionUnit\022\'\n#DOCUMENT_D"
+          + "IMENSION_UNIT_UNSPECIFIED\020\000\022\010\n\004INCH\020\001\022\016\n"
+          + "\nCENTIMETER\020\002\022\t\n\005POINT\020\003\"\326\005\n\010Document\022A\n"
+          + "\014input_config\030\001 \001(\0132+.google.cloud.autom"
+          + "l.v1.DocumentInputConfig\022:\n\rdocument_tex"
+          + "t\030\002 \001(\0132#.google.cloud.automl.v1.TextSni"
+          + "ppet\0227\n\006layout\030\003 \003(\0132\'.google.cloud.auto"
+          + "ml.v1.Document.Layout\022G\n\023document_dimens"
+          + "ions\030\004 \001(\0132*.google.cloud.automl.v1.Docu"
+          + "mentDimensions\022\022\n\npage_count\030\005 \001(\005\032\264\003\n\006L"
+          + "ayout\0229\n\014text_segment\030\001 \001(\0132#.google.clo"
+          + "ud.automl.v1.TextSegment\022\023\n\013page_number\030"
+          + "\002 \001(\005\022;\n\rbounding_poly\030\003 \001(\0132$.google.cl"
+          + "oud.automl.v1.BoundingPoly\022R\n\021text_segme"
+          + "nt_type\030\004 \001(\01627.google.cloud.automl.v1.D"
+          + "ocument.Layout.TextSegmentType\"\310\001\n\017TextS"
+          + "egmentType\022!\n\035TEXT_SEGMENT_TYPE_UNSPECIF"
+          + "IED\020\000\022\t\n\005TOKEN\020\001\022\r\n\tPARAGRAPH\020\002\022\016\n\nFORM_"
+          + "FIELD\020\003\022\023\n\017FORM_FIELD_NAME\020\004\022\027\n\023FORM_FIE"
+          + "LD_CONTENTS\020\005\022\t\n\005TABLE\020\006\022\020\n\014TABLE_HEADER"
+          + "\020\007\022\r\n\tTABLE_ROW\020\010\022\016\n\nTABLE_CELL\020\t\"\276\001\n\016Ex"
+          + "amplePayload\022.\n\005image\030\001 \001(\0132\035.google.clo"
+          + "ud.automl.v1.ImageH\000\022;\n\014text_snippet\030\002 \001"
+          + "(\0132#.google.cloud.automl.v1.TextSnippetH"
+          + "\000\0224\n\010document\030\004 \001(\0132 .google.cloud.autom"
+          + "l.v1.DocumentH\000B\t\n\007payloadB\252\001\n\032com.googl"
+          + "e.cloud.automl.v1P\001Z<google.golang.org/g"
+          + "enproto/googleapis/cloud/automl/v1;autom"
+          + "l\252\002\026Google.Cloud.AutoML.V1\312\002\026Google\\Clou"
+          + "d\\AutoML\\V1\352\002\031Google::Cloud::AutoML::V1b"
+          + "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -70,30 +119,66 @@ public final class DataItems {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.cloud.automl.v1.Geometry.getDescriptor(),
           com.google.cloud.automl.v1.Io.getDescriptor(),
+          com.google.cloud.automl.v1.TextSegmentProto.getDescriptor(),
           com.google.protobuf.AnyProto.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
-    internal_static_google_cloud_automl_v1_TextSnippet_descriptor =
+    internal_static_google_cloud_automl_v1_Image_descriptor =
         getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_automl_v1_Image_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1_Image_descriptor,
+            new java.lang.String[] {
+              "ImageBytes", "ImageInputConfig", "ThumbnailUri", "Data",
+            });
+    internal_static_google_cloud_automl_v1_TextSnippet_descriptor =
+        getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_automl_v1_TextSnippet_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1_TextSnippet_descriptor,
             new java.lang.String[] {
               "Content", "MimeType", "ContentUri",
             });
+    internal_static_google_cloud_automl_v1_DocumentDimensions_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_automl_v1_DocumentDimensions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1_DocumentDimensions_descriptor,
+            new java.lang.String[] {
+              "Unit", "Width", "Height",
+            });
+    internal_static_google_cloud_automl_v1_Document_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_automl_v1_Document_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1_Document_descriptor,
+            new java.lang.String[] {
+              "InputConfig", "DocumentText", "Layout", "DocumentDimensions", "PageCount",
+            });
+    internal_static_google_cloud_automl_v1_Document_Layout_descriptor =
+        internal_static_google_cloud_automl_v1_Document_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_automl_v1_Document_Layout_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1_Document_Layout_descriptor,
+            new java.lang.String[] {
+              "TextSegment", "PageNumber", "BoundingPoly", "TextSegmentType",
+            });
     internal_static_google_cloud_automl_v1_ExamplePayload_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_automl_v1_ExamplePayload_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1_ExamplePayload_descriptor,
             new java.lang.String[] {
-              "TextSnippet", "Payload",
+              "Image", "TextSnippet", "Document", "Payload",
             });
+    com.google.cloud.automl.v1.Geometry.getDescriptor();
     com.google.cloud.automl.v1.Io.getDescriptor();
+    com.google.cloud.automl.v1.TextSegmentProto.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
