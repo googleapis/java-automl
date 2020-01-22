@@ -10,7 +10,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-automl-parent</artifactId>
-    <version>0.116.0-beta</version><!-- {x-version-update:google-cloud-automl:current} -->
+    <version>1.0.0</version><!-- {x-version-update:google-cloud-automl:current} -->
   </parent>
   <dependencies>
     <dependency>
