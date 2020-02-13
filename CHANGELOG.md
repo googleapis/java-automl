@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.2](https://www.github.com/googleapis/java-automl/compare/v1.0.1...v1.0.2) (2020-02-13)
+
+
+### Documentation
+
+* **regen:** update sample code to set total timeout, add API client header test ([5c08375](https://www.github.com/googleapis/java-automl/commit/5c08375d8dd705f24ffeba2d416019ef8a833c30))
+
 ### [1.0.1](https://www.github.com/googleapis/java-automl/compare/v1.0.0...v1.0.1) (2020-02-04)
 
 
