@@ -97,17 +97,23 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
             }
           case 26:
             {
-              com.google.cloud.automl.v1.ClassificationAnnotation.Builder subBuilder = null;
+              com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation.Builder
+                  subBuilder = null;
               if (detailCase_ == 3) {
                 subBuilder =
-                    ((com.google.cloud.automl.v1.ClassificationAnnotation) detail_).toBuilder();
+                    ((com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation)
+                            detail_)
+                        .toBuilder();
               }
               detail_ =
                   input.readMessage(
-                      com.google.cloud.automl.v1.ClassificationAnnotation.parser(),
+                      com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation
+                          .parser(),
                       extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.automl.v1.ClassificationAnnotation) detail_);
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation)
+                        detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 3;
@@ -160,17 +166,23 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
             }
           case 58:
             {
-              com.google.cloud.automl.v1.TextSentimentAnnotation.Builder subBuilder = null;
+              com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation.Builder
+                  subBuilder = null;
               if (detailCase_ == 7) {
                 subBuilder =
-                    ((com.google.cloud.automl.v1.TextSentimentAnnotation) detail_).toBuilder();
+                    ((com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation)
+                            detail_)
+                        .toBuilder();
               }
               detail_ =
                   input.readMessage(
-                      com.google.cloud.automl.v1.TextSentimentAnnotation.parser(),
+                      com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation
+                          .parser(),
                       extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.automl.v1.TextSentimentAnnotation) detail_);
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation)
+                        detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 7;
@@ -340,11 +352,13 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return The classification.
    */
-  public com.google.cloud.automl.v1.ClassificationAnnotation getClassification() {
+  public com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation
+      getClassification() {
     if (detailCase_ == 3) {
-      return (com.google.cloud.automl.v1.ClassificationAnnotation) detail_;
+      return (com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation) detail_;
     }
-    return com.google.cloud.automl.v1.ClassificationAnnotation.getDefaultInstance();
+    return com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation
+        .getDefaultInstance();
   }
   /**
    *
@@ -355,11 +369,13 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.automl.v1.ClassificationAnnotation classification = 3;</code>
    */
-  public com.google.cloud.automl.v1.ClassificationAnnotationOrBuilder getClassificationOrBuilder() {
+  public com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotationOrBuilder
+      getClassificationOrBuilder() {
     if (detailCase_ == 3) {
-      return (com.google.cloud.automl.v1.ClassificationAnnotation) detail_;
+      return (com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation) detail_;
     }
-    return com.google.cloud.automl.v1.ClassificationAnnotation.getDefaultInstance();
+    return com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation
+        .getDefaultInstance();
   }
 
   public static final int IMAGE_OBJECT_DETECTION_FIELD_NUMBER = 4;
@@ -485,11 +501,12 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return The textSentiment.
    */
-  public com.google.cloud.automl.v1.TextSentimentAnnotation getTextSentiment() {
+  public com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation getTextSentiment() {
     if (detailCase_ == 7) {
-      return (com.google.cloud.automl.v1.TextSentimentAnnotation) detail_;
+      return (com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation) detail_;
     }
-    return com.google.cloud.automl.v1.TextSentimentAnnotation.getDefaultInstance();
+    return com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation
+        .getDefaultInstance();
   }
   /**
    *
@@ -500,11 +517,13 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.automl.v1.TextSentimentAnnotation text_sentiment = 7;</code>
    */
-  public com.google.cloud.automl.v1.TextSentimentAnnotationOrBuilder getTextSentimentOrBuilder() {
+  public com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotationOrBuilder
+      getTextSentimentOrBuilder() {
     if (detailCase_ == 7) {
-      return (com.google.cloud.automl.v1.TextSentimentAnnotation) detail_;
+      return (com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation) detail_;
     }
-    return com.google.cloud.automl.v1.TextSentimentAnnotation.getDefaultInstance();
+    return com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation
+        .getDefaultInstance();
   }
 
   public static final int ANNOTATION_SPEC_ID_FIELD_NUMBER = 1;
@@ -636,7 +655,8 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       output.writeMessage(2, (com.google.cloud.automl.v1.TranslationAnnotation) detail_);
     }
     if (detailCase_ == 3) {
-      output.writeMessage(3, (com.google.cloud.automl.v1.ClassificationAnnotation) detail_);
+      output.writeMessage(
+          3, (com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation) detail_);
     }
     if (detailCase_ == 4) {
       output.writeMessage(4, (com.google.cloud.automl.v1.ImageObjectDetectionAnnotation) detail_);
@@ -648,7 +668,8 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       output.writeMessage(6, (com.google.cloud.automl.v1.TextExtractionAnnotation) detail_);
     }
     if (detailCase_ == 7) {
-      output.writeMessage(7, (com.google.cloud.automl.v1.TextSentimentAnnotation) detail_);
+      output.writeMessage(
+          7, (com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation) detail_);
     }
     unknownFields.writeTo(output);
   }
@@ -670,7 +691,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     if (detailCase_ == 3) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              3, (com.google.cloud.automl.v1.ClassificationAnnotation) detail_);
+              3, (com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation) detail_);
     }
     if (detailCase_ == 4) {
       size +=
@@ -688,7 +709,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     if (detailCase_ == 7) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              7, (com.google.cloud.automl.v1.TextSentimentAnnotation) detail_);
+              7, (com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation) detail_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1321,9 +1342,9 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1.ClassificationAnnotation,
-            com.google.cloud.automl.v1.ClassificationAnnotation.Builder,
-            com.google.cloud.automl.v1.ClassificationAnnotationOrBuilder>
+            com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation,
+            com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation.Builder,
+            com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotationOrBuilder>
         classificationBuilder_;
     /**
      *
@@ -1350,17 +1371,20 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * @return The classification.
      */
-    public com.google.cloud.automl.v1.ClassificationAnnotation getClassification() {
+    public com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation
+        getClassification() {
       if (classificationBuilder_ == null) {
         if (detailCase_ == 3) {
-          return (com.google.cloud.automl.v1.ClassificationAnnotation) detail_;
+          return (com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation) detail_;
         }
-        return com.google.cloud.automl.v1.ClassificationAnnotation.getDefaultInstance();
+        return com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation
+            .getDefaultInstance();
       } else {
         if (detailCase_ == 3) {
           return classificationBuilder_.getMessage();
         }
-        return com.google.cloud.automl.v1.ClassificationAnnotation.getDefaultInstance();
+        return com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation
+            .getDefaultInstance();
       }
     }
     /**
@@ -1372,7 +1396,8 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.automl.v1.ClassificationAnnotation classification = 3;</code>
      */
-    public Builder setClassification(com.google.cloud.automl.v1.ClassificationAnnotation value) {
+    public Builder setClassification(
+        com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation value) {
       if (classificationBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1395,7 +1420,8 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.automl.v1.ClassificationAnnotation classification = 3;</code>
      */
     public Builder setClassification(
-        com.google.cloud.automl.v1.ClassificationAnnotation.Builder builderForValue) {
+        com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation.Builder
+            builderForValue) {
       if (classificationBuilder_ == null) {
         detail_ = builderForValue.build();
         onChanged();
@@ -1414,14 +1440,17 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.automl.v1.ClassificationAnnotation classification = 3;</code>
      */
-    public Builder mergeClassification(com.google.cloud.automl.v1.ClassificationAnnotation value) {
+    public Builder mergeClassification(
+        com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation value) {
       if (classificationBuilder_ == null) {
         if (detailCase_ == 3
             && detail_
-                != com.google.cloud.automl.v1.ClassificationAnnotation.getDefaultInstance()) {
+                != com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation
+                    .getDefaultInstance()) {
           detail_ =
-              com.google.cloud.automl.v1.ClassificationAnnotation.newBuilder(
-                      (com.google.cloud.automl.v1.ClassificationAnnotation) detail_)
+              com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation.newBuilder(
+                      (com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation)
+                          detail_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
@@ -1471,7 +1500,8 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.automl.v1.ClassificationAnnotation classification = 3;</code>
      */
-    public com.google.cloud.automl.v1.ClassificationAnnotation.Builder getClassificationBuilder() {
+    public com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation.Builder
+        getClassificationBuilder() {
       return getClassificationFieldBuilder().getBuilder();
     }
     /**
@@ -1483,15 +1513,16 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.automl.v1.ClassificationAnnotation classification = 3;</code>
      */
-    public com.google.cloud.automl.v1.ClassificationAnnotationOrBuilder
+    public com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotationOrBuilder
         getClassificationOrBuilder() {
       if ((detailCase_ == 3) && (classificationBuilder_ != null)) {
         return classificationBuilder_.getMessageOrBuilder();
       } else {
         if (detailCase_ == 3) {
-          return (com.google.cloud.automl.v1.ClassificationAnnotation) detail_;
+          return (com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation) detail_;
         }
-        return com.google.cloud.automl.v1.ClassificationAnnotation.getDefaultInstance();
+        return com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation
+            .getDefaultInstance();
       }
     }
     /**
@@ -1504,20 +1535,22 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.automl.v1.ClassificationAnnotation classification = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1.ClassificationAnnotation,
-            com.google.cloud.automl.v1.ClassificationAnnotation.Builder,
-            com.google.cloud.automl.v1.ClassificationAnnotationOrBuilder>
+            com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation,
+            com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation.Builder,
+            com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotationOrBuilder>
         getClassificationFieldBuilder() {
       if (classificationBuilder_ == null) {
         if (!(detailCase_ == 3)) {
-          detail_ = com.google.cloud.automl.v1.ClassificationAnnotation.getDefaultInstance();
+          detail_ =
+              com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation
+                  .getDefaultInstance();
         }
         classificationBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.automl.v1.ClassificationAnnotation,
-                com.google.cloud.automl.v1.ClassificationAnnotation.Builder,
-                com.google.cloud.automl.v1.ClassificationAnnotationOrBuilder>(
-                (com.google.cloud.automl.v1.ClassificationAnnotation) detail_,
+                com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation,
+                com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation.Builder,
+                com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotationOrBuilder>(
+                (com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation) detail_,
                 getParentForChildren(),
                 isClean());
         detail_ = null;
@@ -1957,9 +1990,9 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1.TextSentimentAnnotation,
-            com.google.cloud.automl.v1.TextSentimentAnnotation.Builder,
-            com.google.cloud.automl.v1.TextSentimentAnnotationOrBuilder>
+            com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation,
+            com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation.Builder,
+            com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotationOrBuilder>
         textSentimentBuilder_;
     /**
      *
@@ -1986,17 +2019,20 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * @return The textSentiment.
      */
-    public com.google.cloud.automl.v1.TextSentimentAnnotation getTextSentiment() {
+    public com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation
+        getTextSentiment() {
       if (textSentimentBuilder_ == null) {
         if (detailCase_ == 7) {
-          return (com.google.cloud.automl.v1.TextSentimentAnnotation) detail_;
+          return (com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation) detail_;
         }
-        return com.google.cloud.automl.v1.TextSentimentAnnotation.getDefaultInstance();
+        return com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation
+            .getDefaultInstance();
       } else {
         if (detailCase_ == 7) {
           return textSentimentBuilder_.getMessage();
         }
-        return com.google.cloud.automl.v1.TextSentimentAnnotation.getDefaultInstance();
+        return com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation
+            .getDefaultInstance();
       }
     }
     /**
@@ -2008,7 +2044,8 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.automl.v1.TextSentimentAnnotation text_sentiment = 7;</code>
      */
-    public Builder setTextSentiment(com.google.cloud.automl.v1.TextSentimentAnnotation value) {
+    public Builder setTextSentiment(
+        com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation value) {
       if (textSentimentBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2031,7 +2068,8 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.automl.v1.TextSentimentAnnotation text_sentiment = 7;</code>
      */
     public Builder setTextSentiment(
-        com.google.cloud.automl.v1.TextSentimentAnnotation.Builder builderForValue) {
+        com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation.Builder
+            builderForValue) {
       if (textSentimentBuilder_ == null) {
         detail_ = builderForValue.build();
         onChanged();
@@ -2050,13 +2088,17 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.automl.v1.TextSentimentAnnotation text_sentiment = 7;</code>
      */
-    public Builder mergeTextSentiment(com.google.cloud.automl.v1.TextSentimentAnnotation value) {
+    public Builder mergeTextSentiment(
+        com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation value) {
       if (textSentimentBuilder_ == null) {
         if (detailCase_ == 7
-            && detail_ != com.google.cloud.automl.v1.TextSentimentAnnotation.getDefaultInstance()) {
+            && detail_
+                != com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation
+                    .getDefaultInstance()) {
           detail_ =
-              com.google.cloud.automl.v1.TextSentimentAnnotation.newBuilder(
-                      (com.google.cloud.automl.v1.TextSentimentAnnotation) detail_)
+              com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation.newBuilder(
+                      (com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation)
+                          detail_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
@@ -2106,7 +2148,8 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.automl.v1.TextSentimentAnnotation text_sentiment = 7;</code>
      */
-    public com.google.cloud.automl.v1.TextSentimentAnnotation.Builder getTextSentimentBuilder() {
+    public com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation.Builder
+        getTextSentimentBuilder() {
       return getTextSentimentFieldBuilder().getBuilder();
     }
     /**
@@ -2118,14 +2161,16 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.automl.v1.TextSentimentAnnotation text_sentiment = 7;</code>
      */
-    public com.google.cloud.automl.v1.TextSentimentAnnotationOrBuilder getTextSentimentOrBuilder() {
+    public com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotationOrBuilder
+        getTextSentimentOrBuilder() {
       if ((detailCase_ == 7) && (textSentimentBuilder_ != null)) {
         return textSentimentBuilder_.getMessageOrBuilder();
       } else {
         if (detailCase_ == 7) {
-          return (com.google.cloud.automl.v1.TextSentimentAnnotation) detail_;
+          return (com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation) detail_;
         }
-        return com.google.cloud.automl.v1.TextSentimentAnnotation.getDefaultInstance();
+        return com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation
+            .getDefaultInstance();
       }
     }
     /**
@@ -2138,20 +2183,22 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.automl.v1.TextSentimentAnnotation text_sentiment = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1.TextSentimentAnnotation,
-            com.google.cloud.automl.v1.TextSentimentAnnotation.Builder,
-            com.google.cloud.automl.v1.TextSentimentAnnotationOrBuilder>
+            com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation,
+            com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation.Builder,
+            com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotationOrBuilder>
         getTextSentimentFieldBuilder() {
       if (textSentimentBuilder_ == null) {
         if (!(detailCase_ == 7)) {
-          detail_ = com.google.cloud.automl.v1.TextSentimentAnnotation.getDefaultInstance();
+          detail_ =
+              com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation
+                  .getDefaultInstance();
         }
         textSentimentBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.automl.v1.TextSentimentAnnotation,
-                com.google.cloud.automl.v1.TextSentimentAnnotation.Builder,
-                com.google.cloud.automl.v1.TextSentimentAnnotationOrBuilder>(
-                (com.google.cloud.automl.v1.TextSentimentAnnotation) detail_,
+                com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation,
+                com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation.Builder,
+                com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotationOrBuilder>(
+                (com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation) detail_,
                 getParentForChildren(),
                 isClean());
         detail_ = null;

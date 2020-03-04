@@ -81,7 +81,7 @@ public interface AnnotationPayloadOrBuilder
    *
    * @return The classification.
    */
-  com.google.cloud.automl.v1.ClassificationAnnotation getClassification();
+  com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotation getClassification();
   /**
    *
    *
@@ -91,7 +91,8 @@ public interface AnnotationPayloadOrBuilder
    *
    * <code>.google.cloud.automl.v1.ClassificationAnnotation classification = 3;</code>
    */
-  com.google.cloud.automl.v1.ClassificationAnnotationOrBuilder getClassificationOrBuilder();
+  com.google.cloud.automl.v1.ClassificationProto.ClassificationAnnotationOrBuilder
+      getClassificationOrBuilder();
 
   /**
    *
@@ -187,7 +188,7 @@ public interface AnnotationPayloadOrBuilder
    *
    * @return The textSentiment.
    */
-  com.google.cloud.automl.v1.TextSentimentAnnotation getTextSentiment();
+  com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotation getTextSentiment();
   /**
    *
    *
@@ -197,7 +198,8 @@ public interface AnnotationPayloadOrBuilder
    *
    * <code>.google.cloud.automl.v1.TextSentimentAnnotation text_sentiment = 7;</code>
    */
-  com.google.cloud.automl.v1.TextSentimentAnnotationOrBuilder getTextSentimentOrBuilder();
+  com.google.cloud.automl.v1.TextSentimentProto.TextSentimentAnnotationOrBuilder
+      getTextSentimentOrBuilder();
 
   /**
    *

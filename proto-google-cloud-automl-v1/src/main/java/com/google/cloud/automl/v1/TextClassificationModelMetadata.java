@@ -139,11 +139,14 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
    *
    * @return The classificationType.
    */
-  public com.google.cloud.automl.v1.ClassificationType getClassificationType() {
+  public com.google.cloud.automl.v1.ClassificationProto.ClassificationType getClassificationType() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.automl.v1.ClassificationType result =
-        com.google.cloud.automl.v1.ClassificationType.valueOf(classificationType_);
-    return result == null ? com.google.cloud.automl.v1.ClassificationType.UNRECOGNIZED : result;
+    com.google.cloud.automl.v1.ClassificationProto.ClassificationType result =
+        com.google.cloud.automl.v1.ClassificationProto.ClassificationType.valueOf(
+            classificationType_);
+    return result == null
+        ? com.google.cloud.automl.v1.ClassificationProto.ClassificationType.UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -161,7 +164,8 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (classificationType_
-        != com.google.cloud.automl.v1.ClassificationType.CLASSIFICATION_TYPE_UNSPECIFIED
+        != com.google.cloud.automl.v1.ClassificationProto.ClassificationType
+            .CLASSIFICATION_TYPE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(3, classificationType_);
     }
@@ -175,7 +179,8 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
 
     size = 0;
     if (classificationType_
-        != com.google.cloud.automl.v1.ClassificationType.CLASSIFICATION_TYPE_UNSPECIFIED
+        != com.google.cloud.automl.v1.ClassificationProto.ClassificationType
+            .CLASSIFICATION_TYPE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, classificationType_);
     }
@@ -511,11 +516,15 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
      *
      * @return The classificationType.
      */
-    public com.google.cloud.automl.v1.ClassificationType getClassificationType() {
+    public com.google.cloud.automl.v1.ClassificationProto.ClassificationType
+        getClassificationType() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.automl.v1.ClassificationType result =
-          com.google.cloud.automl.v1.ClassificationType.valueOf(classificationType_);
-      return result == null ? com.google.cloud.automl.v1.ClassificationType.UNRECOGNIZED : result;
+      com.google.cloud.automl.v1.ClassificationProto.ClassificationType result =
+          com.google.cloud.automl.v1.ClassificationProto.ClassificationType.valueOf(
+              classificationType_);
+      return result == null
+          ? com.google.cloud.automl.v1.ClassificationProto.ClassificationType.UNRECOGNIZED
+          : result;
     }
     /**
      *
@@ -529,7 +538,8 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
      * @param value The classificationType to set.
      * @return This builder for chaining.
      */
-    public Builder setClassificationType(com.google.cloud.automl.v1.ClassificationType value) {
+    public Builder setClassificationType(
+        com.google.cloud.automl.v1.ClassificationProto.ClassificationType value) {
       if (value == null) {
         throw new NullPointerException();
       }

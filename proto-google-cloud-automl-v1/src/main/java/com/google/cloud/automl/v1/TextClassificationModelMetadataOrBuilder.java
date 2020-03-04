@@ -46,5 +46,5 @@ public interface TextClassificationModelMetadataOrBuilder
    *
    * @return The classificationType.
    */
-  com.google.cloud.automl.v1.ClassificationType getClassificationType();
+  com.google.cloud.automl.v1.ClassificationProto.ClassificationType getClassificationType();
 }

@@ -108,19 +108,24 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
             }
           case 66:
             {
-              com.google.cloud.automl.v1.ClassificationEvaluationMetrics.Builder subBuilder = null;
+              com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics.Builder
+                  subBuilder = null;
               if (metricsCase_ == 8) {
                 subBuilder =
-                    ((com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_)
+                    ((com.google.cloud.automl.v1.ClassificationProto
+                                .ClassificationEvaluationMetrics)
+                            metrics_)
                         .toBuilder();
               }
               metrics_ =
                   input.readMessage(
-                      com.google.cloud.automl.v1.ClassificationEvaluationMetrics.parser(),
+                      com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics
+                          .parser(),
                       extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(
-                    (com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_);
+                    (com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics)
+                        metrics_);
                 metrics_ = subBuilder.buildPartial();
               }
               metricsCase_ = 8;
@@ -148,19 +153,23 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
             }
           case 90:
             {
-              com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.Builder subBuilder = null;
+              com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics.Builder
+                  subBuilder = null;
               if (metricsCase_ == 11) {
                 subBuilder =
-                    ((com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_)
+                    ((com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics)
+                            metrics_)
                         .toBuilder();
               }
               metrics_ =
                   input.readMessage(
-                      com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.parser(),
+                      com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics
+                          .parser(),
                       extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(
-                    (com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_);
+                    (com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics)
+                        metrics_);
                 metrics_ = subBuilder.buildPartial();
               }
               metricsCase_ = 11;
@@ -309,7 +318,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Model evaluation metrics for image, text classification.
+   * Model evaluation metrics for image, text, video and tables
+   * classification.
+   * Tables problem is considered a classification when the target column
+   * is CATEGORY DataType.
    * </pre>
    *
    * <code>
@@ -325,7 +337,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Model evaluation metrics for image, text classification.
+   * Model evaluation metrics for image, text, video and tables
+   * classification.
+   * Tables problem is considered a classification when the target column
+   * is CATEGORY DataType.
    * </pre>
    *
    * <code>
@@ -334,30 +349,37 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The classificationEvaluationMetrics.
    */
-  public com.google.cloud.automl.v1.ClassificationEvaluationMetrics
+  public com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics
       getClassificationEvaluationMetrics() {
     if (metricsCase_ == 8) {
-      return (com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_;
+      return (com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics)
+          metrics_;
     }
-    return com.google.cloud.automl.v1.ClassificationEvaluationMetrics.getDefaultInstance();
+    return com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics
+        .getDefaultInstance();
   }
   /**
    *
    *
    * <pre>
-   * Model evaluation metrics for image, text classification.
+   * Model evaluation metrics for image, text, video and tables
+   * classification.
+   * Tables problem is considered a classification when the target column
+   * is CATEGORY DataType.
    * </pre>
    *
    * <code>
    * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
    * </code>
    */
-  public com.google.cloud.automl.v1.ClassificationEvaluationMetricsOrBuilder
+  public com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetricsOrBuilder
       getClassificationEvaluationMetricsOrBuilder() {
     if (metricsCase_ == 8) {
-      return (com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_;
+      return (com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics)
+          metrics_;
     }
-    return com.google.cloud.automl.v1.ClassificationEvaluationMetrics.getDefaultInstance();
+    return com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics
+        .getDefaultInstance();
   }
 
   public static final int TRANSLATION_EVALUATION_METRICS_FIELD_NUMBER = 9;
@@ -498,12 +520,14 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The textSentimentEvaluationMetrics.
    */
-  public com.google.cloud.automl.v1.TextSentimentEvaluationMetrics
+  public com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics
       getTextSentimentEvaluationMetrics() {
     if (metricsCase_ == 11) {
-      return (com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_;
+      return (com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics)
+          metrics_;
     }
-    return com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.getDefaultInstance();
+    return com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics
+        .getDefaultInstance();
   }
   /**
    *
@@ -516,12 +540,14 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
    * </code>
    */
-  public com.google.cloud.automl.v1.TextSentimentEvaluationMetricsOrBuilder
+  public com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetricsOrBuilder
       getTextSentimentEvaluationMetricsOrBuilder() {
     if (metricsCase_ == 11) {
-      return (com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_;
+      return (com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics)
+          metrics_;
     }
-    return com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.getDefaultInstance();
+    return com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics
+        .getDefaultInstance();
   }
 
   public static final int TEXT_EXTRACTION_EVALUATION_METRICS_FIELD_NUMBER = 13;
@@ -637,8 +663,14 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. The ID of the annotation spec that the model evaluation
-   * applies to. The The ID is empty for the overall model evaluation.
+   * Output only. The ID of the annotation spec that the model evaluation applies to. The
+   * The ID is empty for the overall model evaluation.
+   * For Tables annotation specs in the dataset do not exist and this ID is
+   * always not set, but for CLASSIFICATION
+   * [prediction_type-s][google.cloud.automl.v1.TablesModelMetadata.prediction_type]
+   * the
+   * [display_name][google.cloud.automl.v1.ModelEvaluation.display_name]
+   * field is used.
    * </pre>
    *
    * <code>string annotation_spec_id = 2;</code>
@@ -660,8 +692,14 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. The ID of the annotation spec that the model evaluation
-   * applies to. The The ID is empty for the overall model evaluation.
+   * Output only. The ID of the annotation spec that the model evaluation applies to. The
+   * The ID is empty for the overall model evaluation.
+   * For Tables annotation specs in the dataset do not exist and this ID is
+   * always not set, but for CLASSIFICATION
+   * [prediction_type-s][google.cloud.automl.v1.TablesModelMetadata.prediction_type]
+   * the
+   * [display_name][google.cloud.automl.v1.ModelEvaluation.display_name]
+   * field is used.
    * </pre>
    *
    * <code>string annotation_spec_id = 2;</code>
@@ -691,7 +729,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * at the moment when the model was trained. Because this field returns a
    * value at model training time, for different models trained from the same
    * dataset, the values may differ, since display names could had been changed
-   * between the two model's trainings.
+   * between the two model's trainings. For Tables CLASSIFICATION
+   * [prediction_type-s][google.cloud.automl.v1.TablesModelMetadata.prediction_type]
+   * distinct values of the target column at the moment of the model evaluation
+   * are populated here.
+   * The display_name is empty for the overall model evaluation.
    * </pre>
    *
    * <code>string display_name = 15;</code>
@@ -718,7 +760,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * at the moment when the model was trained. Because this field returns a
    * value at model training time, for different models trained from the same
    * dataset, the values may differ, since display names could had been changed
-   * between the two model's trainings.
+   * between the two model's trainings. For Tables CLASSIFICATION
+   * [prediction_type-s][google.cloud.automl.v1.TablesModelMetadata.prediction_type]
+   * distinct values of the target column at the moment of the model evaluation
+   * are populated here.
+   * The display_name is empty for the overall model evaluation.
    * </pre>
    *
    * <code>string display_name = 15;</code>
@@ -831,13 +877,18 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       output.writeInt32(6, evaluatedExampleCount_);
     }
     if (metricsCase_ == 8) {
-      output.writeMessage(8, (com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_);
+      output.writeMessage(
+          8,
+          (com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics)
+              metrics_);
     }
     if (metricsCase_ == 9) {
       output.writeMessage(9, (com.google.cloud.automl.v1.TranslationEvaluationMetrics) metrics_);
     }
     if (metricsCase_ == 11) {
-      output.writeMessage(11, (com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_);
+      output.writeMessage(
+          11,
+          (com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics) metrics_);
     }
     if (metricsCase_ == 12) {
       output.writeMessage(
@@ -874,7 +925,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     if (metricsCase_ == 8) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              8, (com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_);
+              8,
+              (com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics)
+                  metrics_);
     }
     if (metricsCase_ == 9) {
       size +=
@@ -884,7 +937,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     if (metricsCase_ == 11) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              11, (com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_);
+              11,
+              (com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics)
+                  metrics_);
     }
     if (metricsCase_ == 12) {
       size +=
@@ -1371,15 +1426,18 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1.ClassificationEvaluationMetrics,
-            com.google.cloud.automl.v1.ClassificationEvaluationMetrics.Builder,
-            com.google.cloud.automl.v1.ClassificationEvaluationMetricsOrBuilder>
+            com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics,
+            com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics.Builder,
+            com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetricsOrBuilder>
         classificationEvaluationMetricsBuilder_;
     /**
      *
      *
      * <pre>
-     * Model evaluation metrics for image, text classification.
+     * Model evaluation metrics for image, text, video and tables
+     * classification.
+     * Tables problem is considered a classification when the target column
+     * is CATEGORY DataType.
      * </pre>
      *
      * <code>
@@ -1395,7 +1453,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Model evaluation metrics for image, text classification.
+     * Model evaluation metrics for image, text, video and tables
+     * classification.
+     * Tables problem is considered a classification when the target column
+     * is CATEGORY DataType.
      * </pre>
      *
      * <code>
@@ -1404,25 +1465,31 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      * @return The classificationEvaluationMetrics.
      */
-    public com.google.cloud.automl.v1.ClassificationEvaluationMetrics
+    public com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics
         getClassificationEvaluationMetrics() {
       if (classificationEvaluationMetricsBuilder_ == null) {
         if (metricsCase_ == 8) {
-          return (com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_;
+          return (com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics)
+              metrics_;
         }
-        return com.google.cloud.automl.v1.ClassificationEvaluationMetrics.getDefaultInstance();
+        return com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics
+            .getDefaultInstance();
       } else {
         if (metricsCase_ == 8) {
           return classificationEvaluationMetricsBuilder_.getMessage();
         }
-        return com.google.cloud.automl.v1.ClassificationEvaluationMetrics.getDefaultInstance();
+        return com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics
+            .getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * Model evaluation metrics for image, text classification.
+     * Model evaluation metrics for image, text, video and tables
+     * classification.
+     * Tables problem is considered a classification when the target column
+     * is CATEGORY DataType.
      * </pre>
      *
      * <code>
@@ -1430,7 +1497,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder setClassificationEvaluationMetrics(
-        com.google.cloud.automl.v1.ClassificationEvaluationMetrics value) {
+        com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics value) {
       if (classificationEvaluationMetricsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1447,7 +1514,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Model evaluation metrics for image, text classification.
+     * Model evaluation metrics for image, text, video and tables
+     * classification.
+     * Tables problem is considered a classification when the target column
+     * is CATEGORY DataType.
      * </pre>
      *
      * <code>
@@ -1455,7 +1525,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder setClassificationEvaluationMetrics(
-        com.google.cloud.automl.v1.ClassificationEvaluationMetrics.Builder builderForValue) {
+        com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics.Builder
+            builderForValue) {
       if (classificationEvaluationMetricsBuilder_ == null) {
         metrics_ = builderForValue.build();
         onChanged();
@@ -1469,7 +1540,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Model evaluation metrics for image, text classification.
+     * Model evaluation metrics for image, text, video and tables
+     * classification.
+     * Tables problem is considered a classification when the target column
+     * is CATEGORY DataType.
      * </pre>
      *
      * <code>
@@ -1477,15 +1551,18 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder mergeClassificationEvaluationMetrics(
-        com.google.cloud.automl.v1.ClassificationEvaluationMetrics value) {
+        com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics value) {
       if (classificationEvaluationMetricsBuilder_ == null) {
         if (metricsCase_ == 8
             && metrics_
-                != com.google.cloud.automl.v1.ClassificationEvaluationMetrics
+                != com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics
                     .getDefaultInstance()) {
           metrics_ =
-              com.google.cloud.automl.v1.ClassificationEvaluationMetrics.newBuilder(
-                      (com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_)
+              com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics
+                  .newBuilder(
+                      (com.google.cloud.automl.v1.ClassificationProto
+                              .ClassificationEvaluationMetrics)
+                          metrics_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
@@ -1505,7 +1582,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Model evaluation metrics for image, text classification.
+     * Model evaluation metrics for image, text, video and tables
+     * classification.
+     * Tables problem is considered a classification when the target column
+     * is CATEGORY DataType.
      * </pre>
      *
      * <code>
@@ -1532,14 +1612,17 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Model evaluation metrics for image, text classification.
+     * Model evaluation metrics for image, text, video and tables
+     * classification.
+     * Tables problem is considered a classification when the target column
+     * is CATEGORY DataType.
      * </pre>
      *
      * <code>
      * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
      * </code>
      */
-    public com.google.cloud.automl.v1.ClassificationEvaluationMetrics.Builder
+    public com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics.Builder
         getClassificationEvaluationMetricsBuilder() {
       return getClassificationEvaluationMetricsFieldBuilder().getBuilder();
     }
@@ -1547,29 +1630,37 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Model evaluation metrics for image, text classification.
+     * Model evaluation metrics for image, text, video and tables
+     * classification.
+     * Tables problem is considered a classification when the target column
+     * is CATEGORY DataType.
      * </pre>
      *
      * <code>
      * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
      * </code>
      */
-    public com.google.cloud.automl.v1.ClassificationEvaluationMetricsOrBuilder
+    public com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetricsOrBuilder
         getClassificationEvaluationMetricsOrBuilder() {
       if ((metricsCase_ == 8) && (classificationEvaluationMetricsBuilder_ != null)) {
         return classificationEvaluationMetricsBuilder_.getMessageOrBuilder();
       } else {
         if (metricsCase_ == 8) {
-          return (com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_;
+          return (com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics)
+              metrics_;
         }
-        return com.google.cloud.automl.v1.ClassificationEvaluationMetrics.getDefaultInstance();
+        return com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics
+            .getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * Model evaluation metrics for image, text classification.
+     * Model evaluation metrics for image, text, video and tables
+     * classification.
+     * Tables problem is considered a classification when the target column
+     * is CATEGORY DataType.
      * </pre>
      *
      * <code>
@@ -1577,21 +1668,25 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1.ClassificationEvaluationMetrics,
-            com.google.cloud.automl.v1.ClassificationEvaluationMetrics.Builder,
-            com.google.cloud.automl.v1.ClassificationEvaluationMetricsOrBuilder>
+            com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics,
+            com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics.Builder,
+            com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetricsOrBuilder>
         getClassificationEvaluationMetricsFieldBuilder() {
       if (classificationEvaluationMetricsBuilder_ == null) {
         if (!(metricsCase_ == 8)) {
           metrics_ =
-              com.google.cloud.automl.v1.ClassificationEvaluationMetrics.getDefaultInstance();
+              com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics
+                  .getDefaultInstance();
         }
         classificationEvaluationMetricsBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.automl.v1.ClassificationEvaluationMetrics,
-                com.google.cloud.automl.v1.ClassificationEvaluationMetrics.Builder,
-                com.google.cloud.automl.v1.ClassificationEvaluationMetricsOrBuilder>(
-                (com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_,
+                com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics,
+                com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics
+                    .Builder,
+                com.google.cloud.automl.v1.ClassificationProto
+                    .ClassificationEvaluationMetricsOrBuilder>(
+                (com.google.cloud.automl.v1.ClassificationProto.ClassificationEvaluationMetrics)
+                    metrics_,
                 getParentForChildren(),
                 isClean());
         metrics_ = null;
@@ -2068,9 +2163,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1.TextSentimentEvaluationMetrics,
-            com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.Builder,
-            com.google.cloud.automl.v1.TextSentimentEvaluationMetricsOrBuilder>
+            com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics,
+            com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics.Builder,
+            com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetricsOrBuilder>
         textSentimentEvaluationMetricsBuilder_;
     /**
      *
@@ -2101,18 +2196,21 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      * @return The textSentimentEvaluationMetrics.
      */
-    public com.google.cloud.automl.v1.TextSentimentEvaluationMetrics
+    public com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics
         getTextSentimentEvaluationMetrics() {
       if (textSentimentEvaluationMetricsBuilder_ == null) {
         if (metricsCase_ == 11) {
-          return (com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_;
+          return (com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics)
+              metrics_;
         }
-        return com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.getDefaultInstance();
+        return com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics
+            .getDefaultInstance();
       } else {
         if (metricsCase_ == 11) {
           return textSentimentEvaluationMetricsBuilder_.getMessage();
         }
-        return com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.getDefaultInstance();
+        return com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics
+            .getDefaultInstance();
       }
     }
     /**
@@ -2127,7 +2225,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder setTextSentimentEvaluationMetrics(
-        com.google.cloud.automl.v1.TextSentimentEvaluationMetrics value) {
+        com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics value) {
       if (textSentimentEvaluationMetricsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2152,7 +2250,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder setTextSentimentEvaluationMetrics(
-        com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.Builder builderForValue) {
+        com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics.Builder
+            builderForValue) {
       if (textSentimentEvaluationMetricsBuilder_ == null) {
         metrics_ = builderForValue.build();
         onChanged();
@@ -2174,14 +2273,17 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder mergeTextSentimentEvaluationMetrics(
-        com.google.cloud.automl.v1.TextSentimentEvaluationMetrics value) {
+        com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics value) {
       if (textSentimentEvaluationMetricsBuilder_ == null) {
         if (metricsCase_ == 11
             && metrics_
-                != com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.getDefaultInstance()) {
+                != com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics
+                    .getDefaultInstance()) {
           metrics_ =
-              com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.newBuilder(
-                      (com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_)
+              com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics
+                  .newBuilder(
+                      (com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics)
+                          metrics_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
@@ -2235,7 +2337,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
      * </code>
      */
-    public com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.Builder
+    public com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics.Builder
         getTextSentimentEvaluationMetricsBuilder() {
       return getTextSentimentEvaluationMetricsFieldBuilder().getBuilder();
     }
@@ -2250,15 +2352,17 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
      * </code>
      */
-    public com.google.cloud.automl.v1.TextSentimentEvaluationMetricsOrBuilder
+    public com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetricsOrBuilder
         getTextSentimentEvaluationMetricsOrBuilder() {
       if ((metricsCase_ == 11) && (textSentimentEvaluationMetricsBuilder_ != null)) {
         return textSentimentEvaluationMetricsBuilder_.getMessageOrBuilder();
       } else {
         if (metricsCase_ == 11) {
-          return (com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_;
+          return (com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics)
+              metrics_;
         }
-        return com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.getDefaultInstance();
+        return com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics
+            .getDefaultInstance();
       }
     }
     /**
@@ -2273,20 +2377,25 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1.TextSentimentEvaluationMetrics,
-            com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.Builder,
-            com.google.cloud.automl.v1.TextSentimentEvaluationMetricsOrBuilder>
+            com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics,
+            com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics.Builder,
+            com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetricsOrBuilder>
         getTextSentimentEvaluationMetricsFieldBuilder() {
       if (textSentimentEvaluationMetricsBuilder_ == null) {
         if (!(metricsCase_ == 11)) {
-          metrics_ = com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.getDefaultInstance();
+          metrics_ =
+              com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics
+                  .getDefaultInstance();
         }
         textSentimentEvaluationMetricsBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.automl.v1.TextSentimentEvaluationMetrics,
-                com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.Builder,
-                com.google.cloud.automl.v1.TextSentimentEvaluationMetricsOrBuilder>(
-                (com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_,
+                com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics,
+                com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics
+                    .Builder,
+                com.google.cloud.automl.v1.TextSentimentProto
+                    .TextSentimentEvaluationMetricsOrBuilder>(
+                (com.google.cloud.automl.v1.TextSentimentProto.TextSentimentEvaluationMetrics)
+                    metrics_,
                 getParentForChildren(),
                 isClean());
         metrics_ = null;
@@ -2650,8 +2759,14 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The ID of the annotation spec that the model evaluation
-     * applies to. The The ID is empty for the overall model evaluation.
+     * Output only. The ID of the annotation spec that the model evaluation applies to. The
+     * The ID is empty for the overall model evaluation.
+     * For Tables annotation specs in the dataset do not exist and this ID is
+     * always not set, but for CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1.TablesModelMetadata.prediction_type]
+     * the
+     * [display_name][google.cloud.automl.v1.ModelEvaluation.display_name]
+     * field is used.
      * </pre>
      *
      * <code>string annotation_spec_id = 2;</code>
@@ -2673,8 +2788,14 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The ID of the annotation spec that the model evaluation
-     * applies to. The The ID is empty for the overall model evaluation.
+     * Output only. The ID of the annotation spec that the model evaluation applies to. The
+     * The ID is empty for the overall model evaluation.
+     * For Tables annotation specs in the dataset do not exist and this ID is
+     * always not set, but for CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1.TablesModelMetadata.prediction_type]
+     * the
+     * [display_name][google.cloud.automl.v1.ModelEvaluation.display_name]
+     * field is used.
      * </pre>
      *
      * <code>string annotation_spec_id = 2;</code>
@@ -2696,8 +2817,14 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The ID of the annotation spec that the model evaluation
-     * applies to. The The ID is empty for the overall model evaluation.
+     * Output only. The ID of the annotation spec that the model evaluation applies to. The
+     * The ID is empty for the overall model evaluation.
+     * For Tables annotation specs in the dataset do not exist and this ID is
+     * always not set, but for CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1.TablesModelMetadata.prediction_type]
+     * the
+     * [display_name][google.cloud.automl.v1.ModelEvaluation.display_name]
+     * field is used.
      * </pre>
      *
      * <code>string annotation_spec_id = 2;</code>
@@ -2718,8 +2845,14 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The ID of the annotation spec that the model evaluation
-     * applies to. The The ID is empty for the overall model evaluation.
+     * Output only. The ID of the annotation spec that the model evaluation applies to. The
+     * The ID is empty for the overall model evaluation.
+     * For Tables annotation specs in the dataset do not exist and this ID is
+     * always not set, but for CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1.TablesModelMetadata.prediction_type]
+     * the
+     * [display_name][google.cloud.automl.v1.ModelEvaluation.display_name]
+     * field is used.
      * </pre>
      *
      * <code>string annotation_spec_id = 2;</code>
@@ -2736,8 +2869,14 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The ID of the annotation spec that the model evaluation
-     * applies to. The The ID is empty for the overall model evaluation.
+     * Output only. The ID of the annotation spec that the model evaluation applies to. The
+     * The ID is empty for the overall model evaluation.
+     * For Tables annotation specs in the dataset do not exist and this ID is
+     * always not set, but for CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1.TablesModelMetadata.prediction_type]
+     * the
+     * [display_name][google.cloud.automl.v1.ModelEvaluation.display_name]
+     * field is used.
      * </pre>
      *
      * <code>string annotation_spec_id = 2;</code>
@@ -2766,7 +2905,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * at the moment when the model was trained. Because this field returns a
      * value at model training time, for different models trained from the same
      * dataset, the values may differ, since display names could had been changed
-     * between the two model's trainings.
+     * between the two model's trainings. For Tables CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1.TablesModelMetadata.prediction_type]
+     * distinct values of the target column at the moment of the model evaluation
+     * are populated here.
+     * The display_name is empty for the overall model evaluation.
      * </pre>
      *
      * <code>string display_name = 15;</code>
@@ -2793,7 +2936,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * at the moment when the model was trained. Because this field returns a
      * value at model training time, for different models trained from the same
      * dataset, the values may differ, since display names could had been changed
-     * between the two model's trainings.
+     * between the two model's trainings. For Tables CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1.TablesModelMetadata.prediction_type]
+     * distinct values of the target column at the moment of the model evaluation
+     * are populated here.
+     * The display_name is empty for the overall model evaluation.
      * </pre>
      *
      * <code>string display_name = 15;</code>
@@ -2820,7 +2967,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * at the moment when the model was trained. Because this field returns a
      * value at model training time, for different models trained from the same
      * dataset, the values may differ, since display names could had been changed
-     * between the two model's trainings.
+     * between the two model's trainings. For Tables CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1.TablesModelMetadata.prediction_type]
+     * distinct values of the target column at the moment of the model evaluation
+     * are populated here.
+     * The display_name is empty for the overall model evaluation.
      * </pre>
      *
      * <code>string display_name = 15;</code>
@@ -2846,7 +2997,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * at the moment when the model was trained. Because this field returns a
      * value at model training time, for different models trained from the same
      * dataset, the values may differ, since display names could had been changed
-     * between the two model's trainings.
+     * between the two model's trainings. For Tables CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1.TablesModelMetadata.prediction_type]
+     * distinct values of the target column at the moment of the model evaluation
+     * are populated here.
+     * The display_name is empty for the overall model evaluation.
      * </pre>
      *
      * <code>string display_name = 15;</code>
@@ -2868,7 +3023,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * at the moment when the model was trained. Because this field returns a
      * value at model training time, for different models trained from the same
      * dataset, the values may differ, since display names could had been changed
-     * between the two model's trainings.
+     * between the two model's trainings. For Tables CLASSIFICATION
+     * [prediction_type-s][google.cloud.automl.v1.TablesModelMetadata.prediction_type]
+     * distinct values of the target column at the moment of the model evaluation
+     * are populated here.
+     * The display_name is empty for the overall model evaluation.
      * </pre>
      *
      * <code>string display_name = 15;</code>
