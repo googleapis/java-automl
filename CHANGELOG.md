@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.1.3](https://www.github.com/googleapis/java-automl/compare/v1.1.2...v1.1.3) (2020-05-29)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#186](https://www.github.com/googleapis/java-automl/issues/186)) ([361923d](https://www.github.com/googleapis/java-automl/commit/361923d26a8a480bcf2630a61a8e9385900d8185))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#191](https://www.github.com/googleapis/java-automl/issues/191)) ([cc4ef2f](https://www.github.com/googleapis/java-automl/commit/cc4ef2fff80177b60901953757770ccfd2078a26))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#176](https://www.github.com/googleapis/java-automl/issues/176)) ([2d640bd](https://www.github.com/googleapis/java-automl/commit/2d640bdc34db30431962074dba38c519525e717f))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#178](https://www.github.com/googleapis/java-automl/issues/178)) ([a8de8a8](https://www.github.com/googleapis/java-automl/commit/a8de8a823ff13552a00154693d04ac73f9bac018))
+
+
+### Documentation
+
+* remove raw html from proto comments ([#182](https://www.github.com/googleapis/java-automl/issues/182)) ([ccdfeff](https://www.github.com/googleapis/java-automl/commit/ccdfeffbc2641b5301f5406b45d74a4560592cf0))
+
 ### [1.1.2](https://www.github.com/googleapis/java-automl/compare/v1.1.1...v1.1.2) (2020-04-20)
 
 
