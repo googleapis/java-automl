@@ -19,6 +19,6 @@
   <!-- 8001 (Class removed): className -->
   <difference>
     <differenceType>8001</differenceType>
-    <className>com/google/cloud/automl/v1beta1/AutoMlClient/**</className>
+    <className>com/google/cloud/automl/v1beta1/**</className>
   </difference>
 </differences>
