@@ -29,25 +29,6 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-automl</artifactId>
   </dependency>
-  <!-- START_EXCLUDE -->
-  <dependency>
-    <groupId>net.sourceforge.argparse4j</groupId>
-    <artifactId>argparse4j</artifactId>
-    <version>0.8.1</version>
-  </dependency>
-  <dependency>
-    <groupId>junit</groupId>
-    <artifactId>junit</artifactId>
-    <version>4.13</version>
-    <scope>test</scope>
-  </dependency>
-  <dependency>
-    <groupId>com.google.truth</groupId>
-    <artifactId>truth</artifactId>
-    <version>1.0.1</version>
-    <scope>test</scope>
-  </dependency>
-  <!-- END_EXCLUDE -->
 </dependencies>
 
 ```
