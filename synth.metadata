@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-automl.git",
-        "sha": "2b2aa6d712c9e0b0dcfdd3ed7c5beaf15a6b0a6f"
+        "sha": "c8495d74ea0a1af12efb126918770d393d46f76b"
       }
     },
     {
@@ -61,6 +61,7 @@
     ".github/trusted-contribution.yml",
     ".github/workflows/ci.yaml",
     ".kokoro/build.bat",
+    ".kokoro/build.sh",
     ".kokoro/coerce_logs.sh",
     ".kokoro/common.cfg",
     ".kokoro/common.sh",
@@ -86,6 +87,7 @@
     ".kokoro/nightly/java8-win.cfg",
     ".kokoro/nightly/java8.cfg",
     ".kokoro/nightly/lint.cfg",
+    ".kokoro/nightly/samples.cfg",
     ".kokoro/populate-secrets.sh",
     ".kokoro/presubmit/clirr.cfg",
     ".kokoro/presubmit/common.cfg",
@@ -98,6 +100,7 @@
     ".kokoro/presubmit/java8.cfg",
     ".kokoro/presubmit/linkage-monitor.cfg",
     ".kokoro/presubmit/lint.cfg",
+    ".kokoro/presubmit/samples.cfg",
     ".kokoro/release/bump_snapshot.cfg",
     ".kokoro/release/common.cfg",
     ".kokoro/release/common.sh",
