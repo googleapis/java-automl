@@ -54,8 +54,8 @@ public class ImportDatasetTest {
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
-            System.getenv(varName),
-            "Environment variable '%s' is required to perform these tests.".format(varName));
+        System.getenv(varName),
+        "Environment variable '%s' is required to perform these tests.".format(varName));
   }
 
   @BeforeClass
@@ -66,28 +66,28 @@ public class ImportDatasetTest {
 
   @Before
   public void setUp()
-          throws IOException, InterruptedException, ExecutionException, TimeoutException {
+      throws IOException, InterruptedException, ExecutionException, TimeoutException {
     // Create a fake dataset to be deleted
     // Create a random dataset name with a length of 32 characters (max allowed by AutoML)
     // To prevent name collisions when running tests in multiple java versions at once.
     // AutoML doesn't allow "-", but accepts "_"
     String datasetName =
-            String.format("test_%s", UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
+        String.format("test_%s", UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
     try (AutoMlClient client = AutoMlClient.create()) {
 
       LocationName projectLocation = LocationName.of(PROJECT_ID, "us-central1");
       TextExtractionDatasetMetadata metadata = TextExtractionDatasetMetadata.newBuilder().build();
       Dataset dataset =
-              Dataset.newBuilder()
-                      .setDisplayName(datasetName)
-                      .setTextExtractionDatasetMetadata(metadata)
-                      .build();
+          Dataset.newBuilder()
+              .setDisplayName(datasetName)
+              .setTextExtractionDatasetMetadata(metadata)
+              .build();
 
       CreateDatasetRequest request =
-              CreateDatasetRequest.newBuilder()
-                      .setParent(projectLocation.toString())
-                      .setDataset(dataset)
-                      .build();
+          CreateDatasetRequest.newBuilder()
+              .setParent(projectLocation.toString())
+              .setDataset(dataset)
+              .build();
       ApiFuture<Dataset> future = client.createDatasetCallable().futureCall(request);
       Dataset createdDataset = future.get(5, TimeUnit.MINUTES);
       String[] names = createdDataset.getName().split("/");
@@ -108,7 +108,7 @@ public class ImportDatasetTest {
 
   @Test
   public void testImportDataset()
-          throws InterruptedException, ExecutionException, TimeoutException, IOException {
+      throws InterruptedException, ExecutionException, TimeoutException, IOException {
 
     try {
       ImportDataset.importDataset(PROJECT_ID, datasetId, BUCKET + "/entity-extraction/dataset.csv");
