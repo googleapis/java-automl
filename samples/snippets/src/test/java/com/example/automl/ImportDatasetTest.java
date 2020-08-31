@@ -114,7 +114,7 @@ public class ImportDatasetTest {
       ImportDataset.importDataset(PROJECT_ID, datasetId, BUCKET + "/entity-extraction/dataset.csv");
     } catch (CancellationException ex) {
       // capture operation ID from output and wait for that operation to be finished.
-      String fullOperationId = ex.getMessage().split("Operation name: ")[1].trim();
+      String fullOperationId = ex.getMessage().split("running operations on the dataset:")[1].trim();
       AutoMlClient client = AutoMlClient.create();
       Operation importDatasetLro = client.getOperationsClient().getOperation(fullOperationId);
       while (!importDatasetLro.getDone()) {
