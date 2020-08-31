@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.gax.rpc.FailedPreconditionException;
 import com.google.cloud.automl.v1beta1.AutoMlClient;
 import com.google.cloud.automl.v1beta1.CreateDatasetRequest;
 import com.google.cloud.automl.v1beta1.Dataset;
@@ -34,6 +35,8 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+
+import io.grpc.StatusRuntimeException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -112,7 +115,7 @@ public class ImportDatasetTest {
 
     try {
       ImportDataset.importDataset(PROJECT_ID, datasetId, BUCKET + "/entity-extraction/dataset.csv");
-    } catch (CancellationException ex) {
+    } catch (ExecutionException | CancellationException | FailedPreconditionException | StatusRuntimeException ex) {
       // capture operation ID from output and wait for that operation to be finished.
       String fullOperationId = ex.getMessage().split("running operations on the dataset:")[1].trim();
       AutoMlClient client = AutoMlClient.create();
