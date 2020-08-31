@@ -27,6 +27,7 @@ import com.google.cloud.automl.v1beta1.Dataset;
 import com.google.cloud.automl.v1beta1.LocationName;
 import com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata;
 import com.google.longrunning.Operation;
+import io.grpc.StatusRuntimeException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -35,8 +36,6 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-
-import io.grpc.StatusRuntimeException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -115,9 +114,13 @@ public class ImportDatasetTest {
 
     try {
       ImportDataset.importDataset(PROJECT_ID, datasetId, BUCKET + "/entity-extraction/dataset.csv");
-    } catch (ExecutionException | CancellationException | FailedPreconditionException | StatusRuntimeException ex) {
+    } catch (ExecutionException
+        | CancellationException
+        | FailedPreconditionException
+        | StatusRuntimeException ex) {
       // capture operation ID from output and wait for that operation to be finished.
-      String fullOperationId = ex.getMessage().split("running operations on the dataset:")[1].trim();
+      String fullOperationId =
+          ex.getMessage().split("running operations on the dataset:")[1].trim();
       AutoMlClient client = AutoMlClient.create();
       Operation importDatasetLro = client.getOperationsClient().getOperation(fullOperationId);
       while (!importDatasetLro.getDone()) {
