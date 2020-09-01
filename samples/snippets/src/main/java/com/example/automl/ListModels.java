@@ -22,9 +22,8 @@ import com.google.cloud.automl.v1.AutoMlSettings;
 import com.google.cloud.automl.v1.ListModelsRequest;
 import com.google.cloud.automl.v1.LocationName;
 import com.google.cloud.automl.v1.Model;
-import org.threeten.bp.Duration;
-
 import java.io.IOException;
+import org.threeten.bp.Duration;
 
 class ListModels {
 
@@ -42,14 +41,14 @@ class ListModels {
     AutoMlSettings.Builder autoMlSettingsBuilder = AutoMlSettings.newBuilder();
 
     autoMlSettingsBuilder
-            .listModelsSettings()
-            .setRetrySettings(
-                    autoMlSettingsBuilder
-                            .listModelsSettings()
-                            .getRetrySettings()
-                            .toBuilder()
-                            .setTotalTimeout(Duration.ofSeconds(20))
-                            .build());
+        .listModelsSettings()
+        .setRetrySettings(
+            autoMlSettingsBuilder
+                .listModelsSettings()
+                .getRetrySettings()
+                .toBuilder()
+                .setTotalTimeout(Duration.ofSeconds(20))
+                .build());
     AutoMlSettings autoMlSettings = autoMlSettingsBuilder.build();
 
     try (AutoMlClient client = AutoMlClient.create(autoMlSettings)) {
