@@ -37,15 +37,17 @@ import org.junit.runners.JUnit4;
 public class VideoObjectTrackingCreateModelTest {
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String DATASET_ID = "VOT1317239119331459072";
+  private static final String DATASET_ID = "VOT0000000000000000";
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
   private String operationId;
 
-  private static void requireEnvVar(String varName) {
+  private static String requireEnvVar(String varName) {
+    String value = System.getenv(varName);
     assertNotNull(
-        System.getenv(varName),
-        "Environment variable '%s' is required to perform these tests.".format(varName));
+            "Environment variable "+ varName + " is required to perform these tests.", System.getenv(varName));
+    return value;
   }
 
   @BeforeClass
@@ -58,32 +60,33 @@ public class VideoObjectTrackingCreateModelTest {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
-  public void tearDown() throws IOException {
-    // Cancel the operation
-    try (AutoMlClient client = AutoMlClient.create()) {
-      client.getOperationsClient().cancelOperation(operationId);
-    }
-
-    System.setOut(null);
+  public void tearDown() {
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test
   public void testVisionClassificationCreateModel()
       throws IOException, ExecutionException, InterruptedException {
-    // Create a random dataset name with a length of 32 characters (max allowed by AutoML)
-    // To prevent name collisions when running tests in multiple java versions at once.
-    // AutoML doesn't allow "-", but accepts "_"
-    String modelName =
-        String.format("test_%s", UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
-    VideoObjectTrackingCreateModel.createModel(PROJECT_ID, DATASET_ID, modelName);
 
-    String got = bout.toString();
-    assertThat(got).contains("Training started");
+    try {
+      // Create a random dataset name with a length of 32 characters (max allowed by AutoML)
+      // To prevent name collisions when running tests in multiple java versions at once.
+      // AutoML doesn't allow "-", but accepts "_"
+      String modelName =
+              String.format("test_%s", UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
+      VideoObjectTrackingCreateModel.createModel(PROJECT_ID, DATASET_ID, modelName);
 
-    operationId = got.split("Training operation name: ")[1].split("\n")[0];
+      String got = bout.toString();
+      assertThat(got).contains("Dataset does not exist");
+    } catch (IOException | ExecutionException | InterruptedException e) {
+      assertThat(e.getMessage()).contains("Dataset does not exist");
+    }
   }
 }

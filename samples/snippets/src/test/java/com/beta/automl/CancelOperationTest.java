@@ -19,19 +19,12 @@ package com.beta.automl;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
-import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.automl.v1beta1.AutoMlClient;
-import com.google.cloud.automl.v1beta1.DatasetName;
-import com.google.cloud.automl.v1beta1.GcsSource;
-import com.google.cloud.automl.v1beta1.InputConfig;
-import com.google.cloud.automl.v1beta1.OperationMetadata;
-import com.google.protobuf.Empty;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.Arrays;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeoutException;
+
+import com.google.api.gax.rpc.NotFoundException;
+import io.grpc.StatusRuntimeException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -42,18 +35,17 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class CancelOperationTest {
   private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
-  private static final String DATASET_ID = "TRL8242630754622767104";
-  private static final String BUCKET = "gs://translate_data_exported/translation.csv";
 
-  private String operationId;
-  private String operationFullNam;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
-  private static void requireEnvVar(String varName) {
-    assertNotNull(System.getenv(varName), String.format(varName));
+  private static String requireEnvVar(String varName) {
+    String value = System.getenv(varName);
+    assertNotNull(
+            "Environment variable "+ varName + " is required to perform these tests.", System.getenv(varName));
+    return value;
   }
-
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
@@ -61,51 +53,33 @@ public class CancelOperationTest {
   }
 
   @Before
-  public void setUp()
-      throws InterruptedException, ExecutionException, TimeoutException, IOException {
+  public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
-
-    // start a import data into dataset and cancel it before it finishes.
-    try (AutoMlClient client = AutoMlClient.create()) {
-      // Get the complete path of the dataset.
-      DatasetName datasetFullId = DatasetName.of(PROJECT_ID, "us-central1", DATASET_ID);
-
-      // Get multiple Google Cloud Storage URIs to import data from
-      GcsSource gcsSource =
-          GcsSource.newBuilder().addAllInputUris(Arrays.asList(BUCKET.split(","))).build();
-
-      InputConfig inputConfig = InputConfig.newBuilder().setGcsSource(gcsSource).build();
-
-      // Start the import job
-      OperationFuture<Empty, OperationMetadata> operation =
-          client.importDataAsync(datasetFullId, inputConfig);
-
-      System.out.format("Operation name: %s%n", operation.getName());
-
-      operationFullNam = operation.getName();
-    }
   }
 
   @After
-  public void tearDown() throws IOException, InterruptedException {
-    System.setOut(null);
-
-    // delete the cancelled operation
-    try (AutoMlClient client = AutoMlClient.create()) {
-      // wait for the operation to be cancelled
-      while (!client.getOperationsClient().getOperation(operationFullNam).getDone()) {
-        Thread.sleep(1000);
-      }
-      client.getOperationsClient().deleteOperation(operationFullNam);
-    }
+  public void tearDown() {
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test
   public void testCancelOperation() throws IOException {
-    CancelOperation.cancelOperation(operationFullNam);
+  String operationFullPathId =
+            String.format("projects/%s/locations/%s/operations/%s", PROJECT_ID, "us-central1", "TCN0000000000");
+  // Any cancelled operation on models or datasets will be hidden once the operations are flagged as failed operations
+    // which makes them hard to delete in the teardown.
+  try{
+    CancelOperation.cancelOperation(operationFullPathId);
     String got = bout.toString();
-    assertThat(got).contains("Operation cancelled");
+    assertThat(got).contains("not found");
+  }   catch (NotFoundException | StatusRuntimeException | InterruptedException e) {
+    assertThat(e.getMessage()).contains("not found");
+  }
+
   }
 }

@@ -51,6 +51,7 @@ public class ImportDatasetTest {
   private String datasetId;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -96,6 +97,7 @@ public class ImportDatasetTest {
 
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 

@@ -40,12 +40,14 @@ public class VideoClassificationCreateDatasetTest {
   private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
   private String datasetId;
 
-  private static void requireEnvVar(String varName) {
+  private static String requireEnvVar(String varName) {
+    String value = System.getenv(varName);
     assertNotNull(
-        System.getenv(varName),
-        "Environment variable '%s' is required to perform these tests.".format(varName));
+            "Environment variable "+ varName + " is required to perform these tests.", System.getenv(varName));
+    return value;
   }
 
   @BeforeClass
@@ -58,6 +60,7 @@ public class VideoClassificationCreateDatasetTest {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 

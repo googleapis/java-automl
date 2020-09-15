@@ -40,6 +40,7 @@ public class LanguageSentimentAnalysisCreateModelTest {
   private static final String DATASET_ID = System.getenv("SENTIMENT_ANALYSIS_DATASET_ID");
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
   private String operationId;
 
   private static void requireEnvVar(String varName) {
@@ -59,6 +60,7 @@ public class LanguageSentimentAnalysisCreateModelTest {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 

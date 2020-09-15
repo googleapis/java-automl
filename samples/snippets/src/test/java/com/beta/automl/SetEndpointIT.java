@@ -17,12 +17,14 @@
 package com.beta.automl;
 
 import static com.google.common.truth.Truth.assertThat;
+import static junit.framework.TestCase.assertNotNull;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -35,19 +37,36 @@ public class SetEndpointIT {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
+
+  private static String requireEnvVar(String varName) {
+    String value = System.getenv(varName);
+    assertNotNull(
+            "Environment variable "+ varName + " is required to perform these tests.", System.getenv(varName));
+    return value;
+  }
+
+  @BeforeClass
+  public static void checkRequirements() {
+    requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
+    requireEnvVar("AUTOML_PROJECT_ID");
+  }
+
 
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
-
   @Test
   public void testSetEndpoint() throws IOException {
     // Act

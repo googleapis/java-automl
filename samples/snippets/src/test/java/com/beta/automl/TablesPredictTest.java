@@ -44,11 +44,13 @@ public class TablesPredictTest {
   private static final String MODEL_ID = "TBL7972827093840953344";
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
-  private static void requireEnvVar(String varName) {
+  private static String requireEnvVar(String varName) {
+    String value = System.getenv(varName);
     assertNotNull(
-        System.getenv(varName),
-        "Environment variable '%s' is required to perform these tests.".format(varName));
+            "Environment variable "+ varName + " is required to perform these tests.", System.getenv(varName));
+    return value;
   }
 
   @BeforeClass
@@ -73,12 +75,15 @@ public class TablesPredictTest {
 
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

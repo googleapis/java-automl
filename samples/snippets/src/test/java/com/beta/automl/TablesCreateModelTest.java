@@ -37,17 +37,19 @@ import org.junit.runners.JUnit4;
 public class TablesCreateModelTest {
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String DATASET_ID = "TBL2017172828410871808";
+  private static final String DATASET_ID = "TBL00000000000000000000";
   private static final String TABLE_SPEC_ID = "3172574831249981440";
   private static final String COLUMN_SPEC_ID = "3224682886313541632";
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
   private String operationId;
 
-  private static void requireEnvVar(String varName) {
+  private static String requireEnvVar(String varName) {
+    String value = System.getenv(varName);
     assertNotNull(
-        System.getenv(varName),
-        "Environment variable '%s' is required to perform these tests.".format(varName));
+            "Environment variable "+ varName + " is required to perform these tests.", System.getenv(varName));
+    return value;
   }
 
   @BeforeClass
@@ -60,31 +62,30 @@ public class TablesCreateModelTest {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
-  public void tearDown() throws IOException {
-    // Cancel the operation
-    try (AutoMlClient client = AutoMlClient.create()) {
-      client.getOperationsClient().cancelOperation(operationId);
-    }
-
-    System.setOut(null);
+  public void tearDown() {
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test
   public void testTablesCreateModel() throws IOException, ExecutionException, InterruptedException {
-    // Create a random dataset name with a length of 32 characters (max allowed by AutoML)
-    // To prevent name collisions when running tests in multiple java versions at once.
-    // AutoML doesn't allow "-", but accepts "_"
-    String modelName =
-        String.format("test_%s", UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
-    TablesCreateModel.createModel(PROJECT_ID, DATASET_ID, TABLE_SPEC_ID, COLUMN_SPEC_ID, modelName);
-
-    String got = bout.toString();
-    assertThat(got).contains("Training started");
-
-    operationId = got.split("Training operation name: ")[1].split("\n")[0];
+    try {
+      // Create a random dataset name with a length of 32 characters (max allowed by AutoML)
+      // To prevent name collisions when running tests in multiple java versions at once.
+      // AutoML doesn't allow "-", but accepts "_"
+      String modelName =
+              String.format("test_%s", UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
+      TablesCreateModel.createModel(PROJECT_ID, DATASET_ID, TABLE_SPEC_ID, COLUMN_SPEC_ID, modelName);
+      String got = bout.toString();
+      assertThat(got).contains("Dataset does not exist");
+    } catch (IOException | ExecutionException | InterruptedException e) {
+      assertThat(e.getMessage()).contains("Dataset does not exist");
+    }
   }
 }

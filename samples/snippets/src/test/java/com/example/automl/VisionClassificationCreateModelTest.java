@@ -40,6 +40,7 @@ public class VisionClassificationCreateModelTest {
   private static final String DATASET_ID = System.getenv("VISION_CLASSIFICATION_DATASET_ID");
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
   private String operationId;
 
   private static void requireEnvVar(String varName) {
@@ -59,6 +60,7 @@ public class VisionClassificationCreateModelTest {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 

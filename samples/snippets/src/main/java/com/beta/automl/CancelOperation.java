@@ -18,11 +18,13 @@ package com.beta.automl;
 
 // [START automl_cancel_operation_beta]
 import com.google.cloud.automl.v1beta1.AutoMlClient;
+import io.grpc.StatusRuntimeException;
+
 import java.io.IOException;
 
 class CancelOperation {
 
-  static void cancelOperation() throws IOException {
+  static void cancelOperation() throws IOException, InterruptedException, StatusRuntimeException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "YOUR_PROJECT_ID";
     String location = "us-central1";
@@ -32,7 +34,7 @@ class CancelOperation {
     cancelOperation(operationFullId);
   }
 
-  static void cancelOperation(String operationFullId) throws IOException {
+  static void cancelOperation(String operationFullId) throws IOException, InterruptedException, StatusRuntimeException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
