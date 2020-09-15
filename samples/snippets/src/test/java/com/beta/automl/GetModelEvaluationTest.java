@@ -35,6 +35,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class GetModelEvaluationTest {
+
   private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
   private static final String MODEL_ID = System.getenv("ENTITY_EXTRACTION_MODEL_ID");
   private String modelEvaluationId;
@@ -45,7 +46,8 @@ public class GetModelEvaluationTest {
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
     assertNotNull(
-            "Environment variable "+ varName + " is required to perform these tests.", System.getenv(varName));
+        "Environment variable " + varName + " is required to perform these tests.",
+        System.getenv(varName));
     return value;
   }
 

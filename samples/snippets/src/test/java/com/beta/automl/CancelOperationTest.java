@@ -19,12 +19,11 @@ package com.beta.automl;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.api.gax.rpc.NotFoundException;
+import io.grpc.StatusRuntimeException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-
-import com.google.api.gax.rpc.NotFoundException;
-import io.grpc.StatusRuntimeException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -34,6 +33,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class CancelOperationTest {
+
   private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
 
   private ByteArrayOutputStream bout;
@@ -43,9 +43,11 @@ public class CancelOperationTest {
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
     assertNotNull(
-            "Environment variable "+ varName + " is required to perform these tests.", System.getenv(varName));
+        "Environment variable " + varName + " is required to perform these tests.",
+        System.getenv(varName));
     return value;
   }
+
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
@@ -69,17 +71,19 @@ public class CancelOperationTest {
 
   @Test
   public void testCancelOperation() throws IOException {
-  String operationFullPathId =
-            String.format("projects/%s/locations/%s/operations/%s", PROJECT_ID, "us-central1", "TCN0000000000");
-  // Any cancelled operation on models or datasets will be hidden once the operations are flagged as failed operations
+    String operationFullPathId =
+        String.format(
+            "projects/%s/locations/%s/operations/%s", PROJECT_ID, "us-central1",
+            "TCN0000000000");
+    // Any cancelled operation on models or datasets will be hidden once the operations are flagged
+    // as failed operations
     // which makes them hard to delete in the teardown.
-  try{
-    CancelOperation.cancelOperation(operationFullPathId);
-    String got = bout.toString();
-    assertThat(got).contains("not found");
-  }   catch (NotFoundException | StatusRuntimeException | InterruptedException e) {
-    assertThat(e.getMessage()).contains("not found");
-  }
-
+    try {
+      CancelOperation.cancelOperation(operationFullPathId);
+      String got = bout.toString();
+      assertThat(got).contains("not found");
+    } catch (NotFoundException | StatusRuntimeException | InterruptedException e) {
+      assertThat(e.getMessage()).contains("not found");
+    }
   }
 }

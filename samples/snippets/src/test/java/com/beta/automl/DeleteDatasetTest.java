@@ -48,7 +48,8 @@ public class DeleteDatasetTest {
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
     assertNotNull(
-            "Environment variable "+ varName + " is required to perform these tests.", System.getenv(varName));
+        "Environment variable " + varName + " is required to perform these tests.",
+        System.getenv(varName));
     return value;
   }
 

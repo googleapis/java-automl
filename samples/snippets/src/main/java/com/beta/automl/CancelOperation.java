@@ -17,9 +17,9 @@
 package com.beta.automl;
 
 // [START automl_cancel_operation_beta]
+
 import com.google.cloud.automl.v1beta1.AutoMlClient;
 import io.grpc.StatusRuntimeException;
-
 import java.io.IOException;
 
 class CancelOperation {
@@ -34,7 +34,8 @@ class CancelOperation {
     cancelOperation(operationFullId);
   }
 
-  static void cancelOperation(String operationFullId) throws IOException, InterruptedException, StatusRuntimeException {
+  static void cancelOperation(String operationFullId)
+      throws IOException, InterruptedException, StatusRuntimeException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.

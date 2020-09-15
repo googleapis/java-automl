@@ -47,7 +47,8 @@ public class ImportDatasetTest {
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
     assertNotNull(
-            "Environment variable "+ varName + " is required to perform these tests.", System.getenv(varName));
+        "Environment variable " + varName + " is required to perform these tests.",
+        System.getenv(varName));
     return value;
   }
 
@@ -77,10 +78,11 @@ public class ImportDatasetTest {
       throws TimeoutException {
 
     try {
-      ImportDataset.importDataset(PROJECT_ID, "TCN0000000000", BUCKET + "/entity-extraction/dataset.csv");
+      ImportDataset.importDataset(
+          PROJECT_ID, "TCN0000000000", BUCKET + "/entity-extraction/dataset.csv");
       String got = bout.toString();
       assertThat(got).contains("doesn't exist");
-    } catch (NotFoundException |IOException | ExecutionException | InterruptedException e) {
+    } catch (NotFoundException | IOException | ExecutionException | InterruptedException e) {
       assertThat(e.getMessage()).contains("doesn't exist");
     }
   }

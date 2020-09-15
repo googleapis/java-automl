@@ -33,11 +33,13 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class TablesBatchPredictBigQueryTest {
+
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String MODEL_ID = "TBL0000000000000000000";
   private static final String INPUT_URI =
       String.format(
-          "bq://%s.automl_do_not_delete_predict_test.automl_predict_test_table", PROJECT_ID);
+          "bq://%s.automl_do_not_delete_predict_test.automl_predict_test_table",
+          PROJECT_ID);
   private static final String OUTPUT_URI = "bq://" + PROJECT_ID;
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -46,7 +48,8 @@ public class TablesBatchPredictBigQueryTest {
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
     assertNotNull(
-            "Environment variable "+ varName + " is required to perform these tests.", System.getenv(varName));
+        "Environment variable " + varName + " is required to perform these tests.",
+        System.getenv(varName));
     return value;
   }
 

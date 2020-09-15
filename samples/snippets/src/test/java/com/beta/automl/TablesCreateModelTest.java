@@ -19,7 +19,6 @@ package com.beta.automl;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
-import com.google.cloud.automl.v1.AutoMlClient;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -48,7 +47,8 @@ public class TablesCreateModelTest {
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
     assertNotNull(
-            "Environment variable "+ varName + " is required to perform these tests.", System.getenv(varName));
+        "Environment variable " + varName + " is required to perform these tests.",
+        System.getenv(varName));
     return value;
   }
 
@@ -80,8 +80,10 @@ public class TablesCreateModelTest {
       // To prevent name collisions when running tests in multiple java versions at once.
       // AutoML doesn't allow "-", but accepts "_"
       String modelName =
-              String.format("test_%s", UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
-      TablesCreateModel.createModel(PROJECT_ID, DATASET_ID, TABLE_SPEC_ID, COLUMN_SPEC_ID, modelName);
+          String.format("test_%s",
+              UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
+      TablesCreateModel
+          .createModel(PROJECT_ID, DATASET_ID, TABLE_SPEC_ID, COLUMN_SPEC_ID, modelName);
       String got = bout.toString();
       assertThat(got).contains("Dataset does not exist");
     } catch (IOException | ExecutionException | InterruptedException e) {

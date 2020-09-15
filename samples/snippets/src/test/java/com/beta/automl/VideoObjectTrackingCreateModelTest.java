@@ -19,7 +19,6 @@ package com.beta.automl;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
-import com.google.cloud.automl.v1.AutoMlClient;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -46,7 +45,8 @@ public class VideoObjectTrackingCreateModelTest {
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
     assertNotNull(
-            "Environment variable "+ varName + " is required to perform these tests.", System.getenv(varName));
+        "Environment variable " + varName + " is required to perform these tests.",
+        System.getenv(varName));
     return value;
   }
 
@@ -80,7 +80,8 @@ public class VideoObjectTrackingCreateModelTest {
       // To prevent name collisions when running tests in multiple java versions at once.
       // AutoML doesn't allow "-", but accepts "_"
       String modelName =
-              String.format("test_%s", UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
+          String.format("test_%s",
+              UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
       VideoObjectTrackingCreateModel.createModel(PROJECT_ID, DATASET_ID, modelName);
 
       String got = bout.toString();

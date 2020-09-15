@@ -29,7 +29,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Tests for Automl Set Endpoint */
+/**
+ * Tests for Automl Set Endpoint
+ */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class SetEndpointIT {
@@ -42,7 +44,8 @@ public class SetEndpointIT {
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
     assertNotNull(
-            "Environment variable "+ varName + " is required to perform these tests.", System.getenv(varName));
+        "Environment variable " + varName + " is required to perform these tests.",
+        System.getenv(varName));
     return value;
   }
 
@@ -51,7 +54,6 @@ public class SetEndpointIT {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("AUTOML_PROJECT_ID");
   }
-
 
   @Before
   public void setUp() {
@@ -67,6 +69,7 @@ public class SetEndpointIT {
     System.out.flush();
     System.setOut(originalPrintStream);
   }
+
   @Test
   public void testSetEndpoint() throws IOException {
     // Act

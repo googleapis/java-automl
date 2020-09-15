@@ -32,6 +32,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class DeleteModelTest {
+
   private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -40,7 +41,8 @@ public class DeleteModelTest {
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
     assertNotNull(
-            "Environment variable "+ varName + " is required to perform these tests.", System.getenv(varName));
+        "Environment variable " + varName + " is required to perform these tests.",
+        System.getenv(varName));
     return value;
   }
 

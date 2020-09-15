@@ -33,6 +33,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class BatchPredictTest {
+
   private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
   private static final String BUCKET_ID = PROJECT_ID + "-lcm";
   private static final String MODEL_ID = "VCN0000000000000000000";

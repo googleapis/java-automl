@@ -35,6 +35,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class GetOperationStatusTest {
+
   private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
   private String operationId;
   private ByteArrayOutputStream bout;
@@ -44,7 +45,8 @@ public class GetOperationStatusTest {
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
     assertNotNull(
-            "Environment variable "+ varName + " is required to perform these tests.", System.getenv(varName));
+        "Environment variable " + varName + " is required to perform these tests.",
+        System.getenv(varName));
     return value;
   }
 
