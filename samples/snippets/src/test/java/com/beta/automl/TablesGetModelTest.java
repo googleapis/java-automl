@@ -33,7 +33,7 @@ import org.junit.runners.JUnit4;
 public class TablesGetModelTest {
 
   private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
-  private static final String MODEL_ID = System.getenv("TABLE_MODEL_ID");
+  private static final String MODEL_ID = "TBL7473655411900416000";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
