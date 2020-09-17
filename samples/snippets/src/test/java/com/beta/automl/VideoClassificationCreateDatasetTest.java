@@ -73,7 +73,7 @@ public class VideoClassificationCreateDatasetTest {
       DatasetName datasetFullId = DatasetName.of(PROJECT_ID, "us-central1", datasetId);
       client.deleteDatasetAsync(datasetFullId).get();
     }
-    System.setOut(null);
+    System.setOut(originalPrintStream);
   }
 
   @Test

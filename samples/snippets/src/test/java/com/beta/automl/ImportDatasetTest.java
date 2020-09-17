@@ -76,7 +76,6 @@ public class ImportDatasetTest {
   @Test
   public void testImportDataset()
       throws TimeoutException {
-
     try {
       ImportDataset.importDataset(
           PROJECT_ID, "TCN0000000000", BUCKET + "/entity-extraction/dataset.csv");

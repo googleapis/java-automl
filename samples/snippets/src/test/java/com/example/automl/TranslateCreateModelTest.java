@@ -19,7 +19,6 @@ package com.example.automl;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
-import com.google.cloud.automl.v1.AutoMlClient;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -36,11 +35,10 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class TranslateCreateModelTest {
   private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
-  private static final String DATASET_ID = System.getenv("TRANSLATION_DATASET_ID");
+  private static final String DATASET_ID = "TRL00000000000000000";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
-  private String operationId;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -52,7 +50,6 @@ public class TranslateCreateModelTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("AUTOML_PROJECT_ID");
-    requireEnvVar("TRANSLATION_DATASET_ID");
   }
 
   @Before
@@ -64,28 +61,24 @@ public class TranslateCreateModelTest {
   }
 
   @After
-  public void tearDown() throws IOException {
-    // Cancel the operation
-    try (AutoMlClient client = AutoMlClient.create()) {
-      client.getOperationsClient().cancelOperation(operationId);
-    }
-
-    System.setOut(null);
+  public void tearDown() {
+    System.setOut(originalPrintStream);
   }
 
   @Test
-  public void testTranslateCreateModel()
-      throws IOException, ExecutionException, InterruptedException {
-    // Create a random dataset name with a length of 32 characters (max allowed by AutoML)
-    // To prevent name collisions when running tests in multiple java versions at once.
-    // AutoML doesn't allow "-", but accepts "_"
-    String modelName =
-        String.format("test_%s", UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
-    TranslateCreateModel.createModel(PROJECT_ID, DATASET_ID, modelName);
-
-    String got = bout.toString();
-    assertThat(got).contains("Training started");
-
-    operationId = got.split("Training operation name: ")[1].split("\n")[0];
+  public void testTranslateCreateModel() {
+    // Create a model from a nonexistent dataset.
+    try {
+      // Create a random dataset name with a length of 32 characters (max allowed by AutoML)
+      // To prevent name collisions when running tests in multiple java versions at once.
+      // AutoML doesn't allow "-", but accepts "_"
+      String modelName =
+          String.format("test_%s", UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
+      TranslateCreateModel.createModel(PROJECT_ID, DATASET_ID, modelName);
+      String got = bout.toString();
+      assertThat(got).contains("Dataset does not exist");
+    } catch (IOException | ExecutionException | InterruptedException e) {
+      assertThat(e.getMessage()).contains("Dataset does not exist");
+    }
   }
 }

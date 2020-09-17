@@ -65,7 +65,7 @@ public class VisionObjectDetectionCreateDatasetTest {
   public void tearDown() throws InterruptedException, ExecutionException, IOException {
     // Delete the created dataset
     DeleteDataset.deleteDataset(PROJECT_ID, datasetId);
-    System.setOut(null);
+    System.setOut(originalPrintStream);
   }
 
   @Test
