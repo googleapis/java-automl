@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-automl.git",
-        "sha": "19595868340960a4e063b5fc27eb42ff63eabee4"
+        "sha": "f764c46035a427de77502c999a6e70d25993231a"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "916c10e8581804df2b48a0f0457d848f3faa582e"
+        "sha": "95dbe1bee3c7f7e52ddb24a54c37080620e0d1a2"
       }
     }
   ],
@@ -106,7 +106,6 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
-    "README.md",
     "codecov.yaml",
     "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/AutoMlClient.java",
     "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/AutoMlSettings.java",
