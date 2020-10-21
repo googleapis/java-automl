@@ -16,8 +16,8 @@
 
 package com.beta.automl;
 
-// [START automl_deploy_model_beta]
 // [START automl_tables_deploy_model]
+// [START automl_deploy_model_beta]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.automl.v1beta1.AutoMlClient;
 import com.google.cloud.automl.v1beta1.DeployModelRequest;

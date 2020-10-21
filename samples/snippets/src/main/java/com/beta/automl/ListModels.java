@@ -16,8 +16,8 @@
 
 package com.beta.automl;
 
-// [START automl_list_models_beta]
 // [START automl_tables_list_models]
+// [START automl_list_models_beta]
 import com.google.cloud.automl.v1beta1.AutoMlClient;
 import com.google.cloud.automl.v1beta1.AutoMlSettings;
 import com.google.cloud.automl.v1beta1.ListModelsRequest;

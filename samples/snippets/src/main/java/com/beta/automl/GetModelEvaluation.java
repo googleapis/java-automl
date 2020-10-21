@@ -70,6 +70,6 @@ class GetModelEvaluation {
     }
   }
 }
-// [END automl_video_classification_get_model_evaluation_beta]
-// [END automl_video_object_tracking_get_model_evaluation_beta]
 // [END automl_tables_get_model_evaluation]
+// [END automl_video_object_tracking_get_model_evaluation_beta]
+// [END automl_video_classification_get_model_evaluation_beta]

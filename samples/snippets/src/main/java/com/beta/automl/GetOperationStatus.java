@@ -55,5 +55,5 @@ class GetOperationStatus {
     }
   }
 }
-// [END automl_get_operation_status_beta]
 // [END automl_tables_get_operation_status]
+// [END automl_get_operation_status_beta]
