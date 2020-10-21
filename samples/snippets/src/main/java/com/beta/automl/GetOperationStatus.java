@@ -17,6 +17,7 @@
 package com.beta.automl;
 
 // [START automl_get_operation_status_beta]
+// [START automl_tables_get_operation_status]
 import com.google.cloud.automl.v1beta1.AutoMlClient;
 import com.google.longrunning.Operation;
 import java.io.IOException;
@@ -55,3 +56,4 @@ class GetOperationStatus {
   }
 }
 // [END automl_get_operation_status_beta]
+// [END automl_tables_get_operation_status]

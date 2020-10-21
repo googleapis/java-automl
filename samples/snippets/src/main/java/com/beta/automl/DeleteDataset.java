@@ -17,6 +17,7 @@
 package com.beta.automl;
 
 // [START automl_delete_dataset_beta]
+// [START automl_tables_delete_dataset]
 import com.google.cloud.automl.v1beta1.AutoMlClient;
 import com.google.cloud.automl.v1beta1.DatasetName;
 import com.google.protobuf.Empty;
@@ -47,3 +48,4 @@ class DeleteDataset {
   }
 }
 // [END automl_delete_dataset_beta]
+// [END automl_tables_delete_dataset]
