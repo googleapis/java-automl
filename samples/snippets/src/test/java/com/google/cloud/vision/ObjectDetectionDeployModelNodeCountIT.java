@@ -48,7 +48,7 @@ public class ObjectDetectionDeployModelNodeCountIT {
 
   @After
   public void tearDown() {
-        System.out.flush();
+    System.out.flush();
     System.setOut(originalPrintStream);
   }
 
