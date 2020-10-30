@@ -32,17 +32,20 @@ public class ClassificationDeployModelIT {
   private static final String MODEL_ID = "ICN0000000000000000000";
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+        System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test
