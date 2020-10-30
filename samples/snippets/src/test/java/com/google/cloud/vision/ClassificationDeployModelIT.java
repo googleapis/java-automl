@@ -22,7 +22,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.concurrent.ExecutionException;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -45,7 +44,7 @@ public class ClassificationDeployModelIT {
 
   @After
   public void tearDown() {
-        System.out.flush();
+    System.out.flush();
     System.setOut(originalPrintStream);
   }
 
