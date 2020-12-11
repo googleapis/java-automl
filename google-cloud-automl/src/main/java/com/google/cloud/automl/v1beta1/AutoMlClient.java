@@ -438,7 +438,7 @@ public class AutoMlClient implements BackgroundResource {
    *
    * @param name Required. Dataset name. Dataset must already exist. All imported annotations and
    *     examples will be added.
-   * @param input_config Required. The desired input location and its domain specific semantics, if
+   * @param inputConfig Required. The desired input location and its domain specific semantics, if
    *     any.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -466,7 +466,7 @@ public class AutoMlClient implements BackgroundResource {
    *
    * @param name Required. Dataset name. Dataset must already exist. All imported annotations and
    *     examples will be added.
-   * @param input_config Required. The desired input location and its domain specific semantics, if
+   * @param inputConfig Required. The desired input location and its domain specific semantics, if
    *     any.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -540,7 +540,7 @@ public class AutoMlClient implements BackgroundResource {
    * [response][google.longrunning.Operation.response] field when it completes.
    *
    * @param name Required. The resource name of the dataset.
-   * @param output_config Required. The desired output location.
+   * @param outputConfig Required. The desired output location.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> exportDataAsync(
@@ -559,7 +559,7 @@ public class AutoMlClient implements BackgroundResource {
    * [response][google.longrunning.Operation.response] field when it completes.
    *
    * @param name Required. The resource name of the dataset.
-   * @param output_config Required. The desired output location.
+   * @param outputConfig Required. The desired output location.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> exportDataAsync(
@@ -763,7 +763,7 @@ public class AutoMlClient implements BackgroundResource {
   /**
    * Updates a table spec.
    *
-   * @param table_spec Required. The table spec which replaces the resource on the server.
+   * @param tableSpec Required. The table spec which replaces the resource on the server.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TableSpec updateTableSpec(TableSpec tableSpec) {
@@ -903,7 +903,7 @@ public class AutoMlClient implements BackgroundResource {
   /**
    * Updates a column spec.
    *
-   * @param column_spec Required. The column spec which replaces the resource on the server.
+   * @param columnSpec Required. The column spec which replaces the resource on the server.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ColumnSpec updateColumnSpec(ColumnSpec columnSpec) {
@@ -1386,7 +1386,7 @@ public class AutoMlClient implements BackgroundResource {
    * when it completes.
    *
    * @param name Required. The resource name of the model to export.
-   * @param output_config Required. The desired output location and configuration.
+   * @param outputConfig Required. The desired output location and configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> exportModelAsync(
@@ -1410,7 +1410,7 @@ public class AutoMlClient implements BackgroundResource {
    * when it completes.
    *
    * @param name Required. The resource name of the model to export.
-   * @param output_config Required. The desired output location and configuration.
+   * @param outputConfig Required. The desired output location and configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> exportModelAsync(
@@ -1487,7 +1487,7 @@ public class AutoMlClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the model whose evaluated examples are to be
    *     exported.
-   * @param output_config Required. The desired output location and configuration.
+   * @param outputConfig Required. The desired output location and configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> exportEvaluatedExamplesAsync(
@@ -1516,7 +1516,7 @@ public class AutoMlClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the model whose evaluated examples are to be
    *     exported.
-   * @param output_config Required. The desired output location and configuration.
+   * @param outputConfig Required. The desired output location and configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> exportEvaluatedExamplesAsync(
