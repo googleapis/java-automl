@@ -22,7 +22,22 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * AutoML Server API.
+ * The resource names are assigned by the server.
+ * The server never reuses names that it has created after the resources with
+ * those names are deleted.
+ * An ID of a resource is the last element of the item's resource name. For
+ * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`, then
+ * the id for the item is `{dataset_id}`.
+ * Currently the only supported `location_id` is "us-central1".
+ * On any input that is documented to expect a string parameter in
+ * snake_case or kebab-case, either of those cases is accepted.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/automl/v1/service.proto")
@@ -832,24 +847,57 @@ public final class AutoMlGrpc {
     return AutoMlFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * AutoML Server API.
+   * The resource names are assigned by the server.
+   * The server never reuses names that it has created after the resources with
+   * those names are deleted.
+   * An ID of a resource is the last element of the item's resource name. For
+   * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`, then
+   * the id for the item is `{dataset_id}`.
+   * Currently the only supported `location_id` is "us-central1".
+   * On any input that is documented to expect a string parameter in
+   * snake_case or kebab-case, either of those cases is accepted.
+   * </pre>
+   */
   public abstract static class AutoMlImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a dataset.
+     * </pre>
+     */
     public void createDataset(
         com.google.cloud.automl.v1.CreateDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateDatasetMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a dataset.
+     * </pre>
+     */
     public void getDataset(
         com.google.cloud.automl.v1.GetDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.Dataset> responseObserver) {
       asyncUnimplementedUnaryCall(getGetDatasetMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists datasets in a project.
+     * </pre>
+     */
     public void listDatasets(
         com.google.cloud.automl.v1.ListDatasetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.ListDatasetsResponse>
@@ -857,56 +905,121 @@ public final class AutoMlGrpc {
       asyncUnimplementedUnaryCall(getListDatasetsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a dataset.
+     * </pre>
+     */
     public void updateDataset(
         com.google.cloud.automl.v1.UpdateDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.Dataset> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateDatasetMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a dataset and all of its contents.
+     * Returns empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes,
+     * and `delete_details` in the
+     * [metadata][google.longrunning.Operation.metadata] field.
+     * </pre>
+     */
     public void deleteDataset(
         com.google.cloud.automl.v1.DeleteDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteDatasetMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Imports data into a dataset.
+     * For Tables this method can only be called on an empty Dataset.
+     * For Tables:
+     * *   A
+     * [schema_inference_version][google.cloud.automl.v1.InputConfig.params]
+     *     parameter must be explicitly set.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public void importData(
         com.google.cloud.automl.v1.ImportDataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getImportDataMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Exports dataset's data to the provided output location.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public void exportData(
         com.google.cloud.automl.v1.ExportDataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getExportDataMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets an annotation spec.
+     * </pre>
+     */
     public void getAnnotationSpec(
         com.google.cloud.automl.v1.GetAnnotationSpecRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.AnnotationSpec> responseObserver) {
       asyncUnimplementedUnaryCall(getGetAnnotationSpecMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a model.
+     * Returns a Model in the [response][google.longrunning.Operation.response]
+     * field when it completes.
+     * When you create a model, several model evaluations are created for it:
+     * a global evaluation, and one evaluation for each annotation spec.
+     * </pre>
+     */
     public void createModel(
         com.google.cloud.automl.v1.CreateModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateModelMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a model.
+     * </pre>
+     */
     public void getModel(
         com.google.cloud.automl.v1.GetModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.Model> responseObserver) {
       asyncUnimplementedUnaryCall(getGetModelMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists models.
+     * </pre>
+     */
     public void listModels(
         com.google.cloud.automl.v1.ListModelsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.ListModelsResponse>
@@ -914,49 +1027,112 @@ public final class AutoMlGrpc {
       asyncUnimplementedUnaryCall(getListModelsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a model.
+     * Returns `google.protobuf.Empty` in the
+     * [response][google.longrunning.Operation.response] field when it completes,
+     * and `delete_details` in the
+     * [metadata][google.longrunning.Operation.metadata] field.
+     * </pre>
+     */
     public void deleteModel(
         com.google.cloud.automl.v1.DeleteModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteModelMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a model.
+     * </pre>
+     */
     public void updateModel(
         com.google.cloud.automl.v1.UpdateModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.Model> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateModelMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a model. If a model is already deployed, deploying it with the
+     * same parameters has no effect. Deploying with different parametrs
+     * (as e.g. changing
+     * [node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
+     *  will reset the deployment state without pausing the model's availability.
+     * Only applicable for Text Classification, Image Object Detection , Tables, and Image Segmentation; all other domains manage
+     * deployment automatically.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public void deployModel(
         com.google.cloud.automl.v1.DeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getDeployModelMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Undeploys a model. If the model is not deployed this method has no effect.
+     * Only applicable for Text Classification, Image Object Detection and Tables;
+     * all other domains manage deployment automatically.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public void undeployModel(
         com.google.cloud.automl.v1.UndeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getUndeployModelMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Exports a trained, "export-able", model to a user specified Google Cloud
+     * Storage location. A model is considered export-able if and only if it has
+     * an export format defined for it in
+     * [ModelExportOutputConfig][google.cloud.automl.v1.ModelExportOutputConfig].
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public void exportModel(
         com.google.cloud.automl.v1.ExportModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getExportModelMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a model evaluation.
+     * </pre>
+     */
     public void getModelEvaluation(
         com.google.cloud.automl.v1.GetModelEvaluationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.ModelEvaluation> responseObserver) {
       asyncUnimplementedUnaryCall(getGetModelEvaluationMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists model evaluations.
+     * </pre>
+     */
     public void listModelEvaluations(
         com.google.cloud.automl.v1.ListModelEvaluationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.ListModelEvaluationsResponse>
@@ -1083,7 +1259,22 @@ public final class AutoMlGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * AutoML Server API.
+   * The resource names are assigned by the server.
+   * The server never reuses names that it has created after the resources with
+   * those names are deleted.
+   * An ID of a resource is the last element of the item's resource name. For
+   * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`, then
+   * the id for the item is `{dataset_id}`.
+   * Currently the only supported `location_id` is "us-central1".
+   * On any input that is documented to expect a string parameter in
+   * snake_case or kebab-case, either of those cases is accepted.
+   * </pre>
+   */
   public static final class AutoMlStub extends io.grpc.stub.AbstractAsyncStub<AutoMlStub> {
     private AutoMlStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -1094,7 +1285,13 @@ public final class AutoMlGrpc {
       return new AutoMlStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a dataset.
+     * </pre>
+     */
     public void createDataset(
         com.google.cloud.automl.v1.CreateDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1104,7 +1301,13 @@ public final class AutoMlGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a dataset.
+     * </pre>
+     */
     public void getDataset(
         com.google.cloud.automl.v1.GetDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.Dataset> responseObserver) {
@@ -1112,7 +1315,13 @@ public final class AutoMlGrpc {
           getChannel().newCall(getGetDatasetMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists datasets in a project.
+     * </pre>
+     */
     public void listDatasets(
         com.google.cloud.automl.v1.ListDatasetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.ListDatasetsResponse>
@@ -1123,7 +1332,13 @@ public final class AutoMlGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a dataset.
+     * </pre>
+     */
     public void updateDataset(
         com.google.cloud.automl.v1.UpdateDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.Dataset> responseObserver) {
@@ -1133,7 +1348,17 @@ public final class AutoMlGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a dataset and all of its contents.
+     * Returns empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes,
+     * and `delete_details` in the
+     * [metadata][google.longrunning.Operation.metadata] field.
+     * </pre>
+     */
     public void deleteDataset(
         com.google.cloud.automl.v1.DeleteDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1143,7 +1368,20 @@ public final class AutoMlGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Imports data into a dataset.
+     * For Tables this method can only be called on an empty Dataset.
+     * For Tables:
+     * *   A
+     * [schema_inference_version][google.cloud.automl.v1.InputConfig.params]
+     *     parameter must be explicitly set.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public void importData(
         com.google.cloud.automl.v1.ImportDataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1151,7 +1389,15 @@ public final class AutoMlGrpc {
           getChannel().newCall(getImportDataMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Exports dataset's data to the provided output location.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public void exportData(
         com.google.cloud.automl.v1.ExportDataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1159,7 +1405,13 @@ public final class AutoMlGrpc {
           getChannel().newCall(getExportDataMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets an annotation spec.
+     * </pre>
+     */
     public void getAnnotationSpec(
         com.google.cloud.automl.v1.GetAnnotationSpecRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.AnnotationSpec> responseObserver) {
@@ -1169,7 +1421,17 @@ public final class AutoMlGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a model.
+     * Returns a Model in the [response][google.longrunning.Operation.response]
+     * field when it completes.
+     * When you create a model, several model evaluations are created for it:
+     * a global evaluation, and one evaluation for each annotation spec.
+     * </pre>
+     */
     public void createModel(
         com.google.cloud.automl.v1.CreateModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1179,7 +1441,13 @@ public final class AutoMlGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a model.
+     * </pre>
+     */
     public void getModel(
         com.google.cloud.automl.v1.GetModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.Model> responseObserver) {
@@ -1187,7 +1455,13 @@ public final class AutoMlGrpc {
           getChannel().newCall(getGetModelMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists models.
+     * </pre>
+     */
     public void listModels(
         com.google.cloud.automl.v1.ListModelsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.ListModelsResponse>
@@ -1196,7 +1470,17 @@ public final class AutoMlGrpc {
           getChannel().newCall(getListModelsMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a model.
+     * Returns `google.protobuf.Empty` in the
+     * [response][google.longrunning.Operation.response] field when it completes,
+     * and `delete_details` in the
+     * [metadata][google.longrunning.Operation.metadata] field.
+     * </pre>
+     */
     public void deleteModel(
         com.google.cloud.automl.v1.DeleteModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1206,7 +1490,13 @@ public final class AutoMlGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a model.
+     * </pre>
+     */
     public void updateModel(
         com.google.cloud.automl.v1.UpdateModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.Model> responseObserver) {
@@ -1216,7 +1506,21 @@ public final class AutoMlGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a model. If a model is already deployed, deploying it with the
+     * same parameters has no effect. Deploying with different parametrs
+     * (as e.g. changing
+     * [node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
+     *  will reset the deployment state without pausing the model's availability.
+     * Only applicable for Text Classification, Image Object Detection , Tables, and Image Segmentation; all other domains manage
+     * deployment automatically.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public void deployModel(
         com.google.cloud.automl.v1.DeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1226,7 +1530,17 @@ public final class AutoMlGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Undeploys a model. If the model is not deployed this method has no effect.
+     * Only applicable for Text Classification, Image Object Detection and Tables;
+     * all other domains manage deployment automatically.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public void undeployModel(
         com.google.cloud.automl.v1.UndeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1236,7 +1550,18 @@ public final class AutoMlGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Exports a trained, "export-able", model to a user specified Google Cloud
+     * Storage location. A model is considered export-able if and only if it has
+     * an export format defined for it in
+     * [ModelExportOutputConfig][google.cloud.automl.v1.ModelExportOutputConfig].
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public void exportModel(
         com.google.cloud.automl.v1.ExportModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1246,7 +1571,13 @@ public final class AutoMlGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a model evaluation.
+     * </pre>
+     */
     public void getModelEvaluation(
         com.google.cloud.automl.v1.GetModelEvaluationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.ModelEvaluation> responseObserver) {
@@ -1256,7 +1587,13 @@ public final class AutoMlGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists model evaluations.
+     * </pre>
+     */
     public void listModelEvaluations(
         com.google.cloud.automl.v1.ListModelEvaluationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.ListModelEvaluationsResponse>
@@ -1268,7 +1605,22 @@ public final class AutoMlGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * AutoML Server API.
+   * The resource names are assigned by the server.
+   * The server never reuses names that it has created after the resources with
+   * those names are deleted.
+   * An ID of a resource is the last element of the item's resource name. For
+   * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`, then
+   * the id for the item is `{dataset_id}`.
+   * Currently the only supported `location_id` is "us-central1".
+   * On any input that is documented to expect a string parameter in
+   * snake_case or kebab-case, either of those cases is accepted.
+   * </pre>
+   */
   public static final class AutoMlBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<AutoMlBlockingStub> {
     private AutoMlBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1280,111 +1632,257 @@ public final class AutoMlGrpc {
       return new AutoMlBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a dataset.
+     * </pre>
+     */
     public com.google.longrunning.Operation createDataset(
         com.google.cloud.automl.v1.CreateDatasetRequest request) {
       return blockingUnaryCall(getChannel(), getCreateDatasetMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a dataset.
+     * </pre>
+     */
     public com.google.cloud.automl.v1.Dataset getDataset(
         com.google.cloud.automl.v1.GetDatasetRequest request) {
       return blockingUnaryCall(getChannel(), getGetDatasetMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists datasets in a project.
+     * </pre>
+     */
     public com.google.cloud.automl.v1.ListDatasetsResponse listDatasets(
         com.google.cloud.automl.v1.ListDatasetsRequest request) {
       return blockingUnaryCall(getChannel(), getListDatasetsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a dataset.
+     * </pre>
+     */
     public com.google.cloud.automl.v1.Dataset updateDataset(
         com.google.cloud.automl.v1.UpdateDatasetRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateDatasetMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a dataset and all of its contents.
+     * Returns empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes,
+     * and `delete_details` in the
+     * [metadata][google.longrunning.Operation.metadata] field.
+     * </pre>
+     */
     public com.google.longrunning.Operation deleteDataset(
         com.google.cloud.automl.v1.DeleteDatasetRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteDatasetMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Imports data into a dataset.
+     * For Tables this method can only be called on an empty Dataset.
+     * For Tables:
+     * *   A
+     * [schema_inference_version][google.cloud.automl.v1.InputConfig.params]
+     *     parameter must be explicitly set.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public com.google.longrunning.Operation importData(
         com.google.cloud.automl.v1.ImportDataRequest request) {
       return blockingUnaryCall(getChannel(), getImportDataMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Exports dataset's data to the provided output location.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public com.google.longrunning.Operation exportData(
         com.google.cloud.automl.v1.ExportDataRequest request) {
       return blockingUnaryCall(getChannel(), getExportDataMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets an annotation spec.
+     * </pre>
+     */
     public com.google.cloud.automl.v1.AnnotationSpec getAnnotationSpec(
         com.google.cloud.automl.v1.GetAnnotationSpecRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetAnnotationSpecMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a model.
+     * Returns a Model in the [response][google.longrunning.Operation.response]
+     * field when it completes.
+     * When you create a model, several model evaluations are created for it:
+     * a global evaluation, and one evaluation for each annotation spec.
+     * </pre>
+     */
     public com.google.longrunning.Operation createModel(
         com.google.cloud.automl.v1.CreateModelRequest request) {
       return blockingUnaryCall(getChannel(), getCreateModelMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a model.
+     * </pre>
+     */
     public com.google.cloud.automl.v1.Model getModel(
         com.google.cloud.automl.v1.GetModelRequest request) {
       return blockingUnaryCall(getChannel(), getGetModelMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists models.
+     * </pre>
+     */
     public com.google.cloud.automl.v1.ListModelsResponse listModels(
         com.google.cloud.automl.v1.ListModelsRequest request) {
       return blockingUnaryCall(getChannel(), getListModelsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a model.
+     * Returns `google.protobuf.Empty` in the
+     * [response][google.longrunning.Operation.response] field when it completes,
+     * and `delete_details` in the
+     * [metadata][google.longrunning.Operation.metadata] field.
+     * </pre>
+     */
     public com.google.longrunning.Operation deleteModel(
         com.google.cloud.automl.v1.DeleteModelRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteModelMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a model.
+     * </pre>
+     */
     public com.google.cloud.automl.v1.Model updateModel(
         com.google.cloud.automl.v1.UpdateModelRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateModelMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a model. If a model is already deployed, deploying it with the
+     * same parameters has no effect. Deploying with different parametrs
+     * (as e.g. changing
+     * [node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
+     *  will reset the deployment state without pausing the model's availability.
+     * Only applicable for Text Classification, Image Object Detection , Tables, and Image Segmentation; all other domains manage
+     * deployment automatically.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public com.google.longrunning.Operation deployModel(
         com.google.cloud.automl.v1.DeployModelRequest request) {
       return blockingUnaryCall(getChannel(), getDeployModelMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Undeploys a model. If the model is not deployed this method has no effect.
+     * Only applicable for Text Classification, Image Object Detection and Tables;
+     * all other domains manage deployment automatically.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public com.google.longrunning.Operation undeployModel(
         com.google.cloud.automl.v1.UndeployModelRequest request) {
       return blockingUnaryCall(getChannel(), getUndeployModelMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Exports a trained, "export-able", model to a user specified Google Cloud
+     * Storage location. A model is considered export-able if and only if it has
+     * an export format defined for it in
+     * [ModelExportOutputConfig][google.cloud.automl.v1.ModelExportOutputConfig].
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public com.google.longrunning.Operation exportModel(
         com.google.cloud.automl.v1.ExportModelRequest request) {
       return blockingUnaryCall(getChannel(), getExportModelMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a model evaluation.
+     * </pre>
+     */
     public com.google.cloud.automl.v1.ModelEvaluation getModelEvaluation(
         com.google.cloud.automl.v1.GetModelEvaluationRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetModelEvaluationMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists model evaluations.
+     * </pre>
+     */
     public com.google.cloud.automl.v1.ListModelEvaluationsResponse listModelEvaluations(
         com.google.cloud.automl.v1.ListModelEvaluationsRequest request) {
       return blockingUnaryCall(
@@ -1392,7 +1890,22 @@ public final class AutoMlGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * AutoML Server API.
+   * The resource names are assigned by the server.
+   * The server never reuses names that it has created after the resources with
+   * those names are deleted.
+   * An ID of a resource is the last element of the item's resource name. For
+   * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`, then
+   * the id for the item is `{dataset_id}`.
+   * Currently the only supported `location_id` is "us-central1".
+   * On any input that is documented to expect a string parameter in
+   * snake_case or kebab-case, either of those cases is accepted.
+   * </pre>
+   */
   public static final class AutoMlFutureStub
       extends io.grpc.stub.AbstractFutureStub<AutoMlFutureStub> {
     private AutoMlFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1404,21 +1917,39 @@ public final class AutoMlGrpc {
       return new AutoMlFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a dataset.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createDataset(com.google.cloud.automl.v1.CreateDatasetRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCreateDatasetMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a dataset.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.automl.v1.Dataset>
         getDataset(com.google.cloud.automl.v1.GetDatasetRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getGetDatasetMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists datasets in a project.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.automl.v1.ListDatasetsResponse>
         listDatasets(com.google.cloud.automl.v1.ListDatasetsRequest request) {
@@ -1426,35 +1957,78 @@ public final class AutoMlGrpc {
           getChannel().newCall(getListDatasetsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a dataset.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.automl.v1.Dataset>
         updateDataset(com.google.cloud.automl.v1.UpdateDatasetRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getUpdateDatasetMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a dataset and all of its contents.
+     * Returns empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes,
+     * and `delete_details` in the
+     * [metadata][google.longrunning.Operation.metadata] field.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteDataset(com.google.cloud.automl.v1.DeleteDatasetRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteDatasetMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Imports data into a dataset.
+     * For Tables this method can only be called on an empty Dataset.
+     * For Tables:
+     * *   A
+     * [schema_inference_version][google.cloud.automl.v1.InputConfig.params]
+     *     parameter must be explicitly set.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         importData(com.google.cloud.automl.v1.ImportDataRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getImportDataMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Exports dataset's data to the provided output location.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         exportData(com.google.cloud.automl.v1.ExportDataRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getExportDataMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets an annotation spec.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.automl.v1.AnnotationSpec>
         getAnnotationSpec(com.google.cloud.automl.v1.GetAnnotationSpecRequest request) {
@@ -1462,20 +2036,42 @@ public final class AutoMlGrpc {
           getChannel().newCall(getGetAnnotationSpecMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a model.
+     * Returns a Model in the [response][google.longrunning.Operation.response]
+     * field when it completes.
+     * When you create a model, several model evaluations are created for it:
+     * a global evaluation, and one evaluation for each annotation spec.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createModel(com.google.cloud.automl.v1.CreateModelRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCreateModelMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a model.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.automl.v1.Model>
         getModel(com.google.cloud.automl.v1.GetModelRequest request) {
       return futureUnaryCall(getChannel().newCall(getGetModelMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists models.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.automl.v1.ListModelsResponse>
         listModels(com.google.cloud.automl.v1.ListModelsRequest request) {
@@ -1483,42 +2079,99 @@ public final class AutoMlGrpc {
           getChannel().newCall(getListModelsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a model.
+     * Returns `google.protobuf.Empty` in the
+     * [response][google.longrunning.Operation.response] field when it completes,
+     * and `delete_details` in the
+     * [metadata][google.longrunning.Operation.metadata] field.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteModel(com.google.cloud.automl.v1.DeleteModelRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteModelMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a model.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.automl.v1.Model>
         updateModel(com.google.cloud.automl.v1.UpdateModelRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getUpdateModelMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a model. If a model is already deployed, deploying it with the
+     * same parameters has no effect. Deploying with different parametrs
+     * (as e.g. changing
+     * [node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
+     *  will reset the deployment state without pausing the model's availability.
+     * Only applicable for Text Classification, Image Object Detection , Tables, and Image Segmentation; all other domains manage
+     * deployment automatically.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deployModel(com.google.cloud.automl.v1.DeployModelRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeployModelMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Undeploys a model. If the model is not deployed this method has no effect.
+     * Only applicable for Text Classification, Image Object Detection and Tables;
+     * all other domains manage deployment automatically.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         undeployModel(com.google.cloud.automl.v1.UndeployModelRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getUndeployModelMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Exports a trained, "export-able", model to a user specified Google Cloud
+     * Storage location. A model is considered export-able if and only if it has
+     * an export format defined for it in
+     * [ModelExportOutputConfig][google.cloud.automl.v1.ModelExportOutputConfig].
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         exportModel(com.google.cloud.automl.v1.ExportModelRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getExportModelMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a model evaluation.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.automl.v1.ModelEvaluation>
         getModelEvaluation(com.google.cloud.automl.v1.GetModelEvaluationRequest request) {
@@ -1526,7 +2179,13 @@ public final class AutoMlGrpc {
           getChannel().newCall(getGetModelEvaluationMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists model evaluations.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.automl.v1.ListModelEvaluationsResponse>
         listModelEvaluations(com.google.cloud.automl.v1.ListModelEvaluationsRequest request) {
