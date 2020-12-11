@@ -37,7 +37,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -180,7 +179,7 @@ public class AutoMlClient implements BackgroundResource {
       LocationName parent, Dataset dataset) {
     CreateDatasetRequest request =
         CreateDatasetRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setDataset(dataset)
             .build();
     return createDatasetAsync(request);
@@ -243,9 +242,7 @@ public class AutoMlClient implements BackgroundResource {
    */
   public final Dataset getDataset(DatasetName name) {
     GetDatasetRequest request =
-        GetDatasetRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataset(request);
   }
 
@@ -292,7 +289,7 @@ public class AutoMlClient implements BackgroundResource {
   public final ListDatasetsPagedResponse listDatasets(LocationName parent) {
     ListDatasetsRequest request =
         ListDatasetsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listDatasets(request);
   }
@@ -387,9 +384,7 @@ public class AutoMlClient implements BackgroundResource {
    */
   public final OperationFuture<Empty, OperationMetadata> deleteDatasetAsync(DatasetName name) {
     DeleteDatasetRequest request =
-        DeleteDatasetRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDatasetAsync(request);
   }
 
@@ -468,7 +463,7 @@ public class AutoMlClient implements BackgroundResource {
       DatasetName name, InputConfig inputConfig) {
     ImportDataRequest request =
         ImportDataRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .setInputConfig(inputConfig)
             .build();
     return importDataAsync(request);
@@ -569,7 +564,7 @@ public class AutoMlClient implements BackgroundResource {
       DatasetName name, OutputConfig outputConfig) {
     ExportDataRequest request =
         ExportDataRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .setOutputConfig(outputConfig)
             .build();
     return exportDataAsync(request);
@@ -637,7 +632,7 @@ public class AutoMlClient implements BackgroundResource {
   public final AnnotationSpec getAnnotationSpec(AnnotationSpecName name) {
     GetAnnotationSpecRequest request =
         GetAnnotationSpecRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return getAnnotationSpec(request);
   }
@@ -689,7 +684,7 @@ public class AutoMlClient implements BackgroundResource {
       LocationName parent, Model model) {
     CreateModelRequest request =
         CreateModelRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setModel(model)
             .build();
     return createModelAsync(request);
@@ -760,7 +755,7 @@ public class AutoMlClient implements BackgroundResource {
    */
   public final Model getModel(ModelName name) {
     GetModelRequest request =
-        GetModelRequest.newBuilder().setName(Objects.isNull(name) ? null : name.toString()).build();
+        GetModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getModel(request);
   }
 
@@ -806,9 +801,7 @@ public class AutoMlClient implements BackgroundResource {
    */
   public final ListModelsPagedResponse listModels(LocationName parent) {
     ListModelsRequest request =
-        ListModelsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
-            .build();
+        ListModelsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listModels(request);
   }
 
@@ -866,9 +859,7 @@ public class AutoMlClient implements BackgroundResource {
    */
   public final OperationFuture<Empty, OperationMetadata> deleteModelAsync(ModelName name) {
     DeleteModelRequest request =
-        DeleteModelRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteModelAsync(request);
   }
 
@@ -979,9 +970,7 @@ public class AutoMlClient implements BackgroundResource {
    */
   public final OperationFuture<Empty, OperationMetadata> deployModelAsync(ModelName name) {
     DeployModelRequest request =
-        DeployModelRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeployModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deployModelAsync(request);
   }
 
@@ -1085,9 +1074,7 @@ public class AutoMlClient implements BackgroundResource {
    */
   public final OperationFuture<Empty, OperationMetadata> undeployModelAsync(ModelName name) {
     UndeployModelRequest request =
-        UndeployModelRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        UndeployModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return undeployModelAsync(request);
   }
 
@@ -1177,7 +1164,7 @@ public class AutoMlClient implements BackgroundResource {
       ModelName name, ModelExportOutputConfig outputConfig) {
     ExportModelRequest request =
         ExportModelRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .setOutputConfig(outputConfig)
             .build();
     return exportModelAsync(request);
@@ -1261,7 +1248,7 @@ public class AutoMlClient implements BackgroundResource {
   public final ModelEvaluation getModelEvaluation(ModelEvaluationName name) {
     GetModelEvaluationRequest request =
         GetModelEvaluationRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return getModelEvaluation(request);
   }
@@ -1320,7 +1307,7 @@ public class AutoMlClient implements BackgroundResource {
       ModelName parent, String filter) {
     ListModelEvaluationsRequest request =
         ListModelEvaluationsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setFilter(filter)
             .build();
     return listModelEvaluations(request);
