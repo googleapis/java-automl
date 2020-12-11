@@ -454,8 +454,8 @@ public class PredictionServiceClient implements BackgroundResource {
    * </ul>
    *
    * @param name Required. Name of the model requested to serve the batch prediction.
-   * @param input_config Required. The input configuration for batch prediction.
-   * @param output_config Required. The Configuration specifying where output predictions should be
+   * @param inputConfig Required. The input configuration for batch prediction.
+   * @param outputConfig Required. The Configuration specifying where output predictions should be
    *     written.
    * @param params Additional domain-specific parameters for the predictions, any string must be up
    *     to 25000 characters long.
@@ -542,8 +542,8 @@ public class PredictionServiceClient implements BackgroundResource {
    * </ul>
    *
    * @param name Required. Name of the model requested to serve the batch prediction.
-   * @param input_config Required. The input configuration for batch prediction.
-   * @param output_config Required. The Configuration specifying where output predictions should be
+   * @param inputConfig Required. The input configuration for batch prediction.
+   * @param outputConfig Required. The Configuration specifying where output predictions should be
    *     written.
    * @param params Additional domain-specific parameters for the predictions, any string must be up
    *     to 25000 characters long.
