@@ -27,7 +27,6 @@ import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.Map;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -204,7 +203,7 @@ public class PredictionServiceClient implements BackgroundResource {
       ModelName name, ExamplePayload payload, Map<String, String> params) {
     PredictRequest request =
         PredictRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .setPayload(payload)
             .putAllParams(params)
             .build();
@@ -407,7 +406,7 @@ public class PredictionServiceClient implements BackgroundResource {
       Map<String, String> params) {
     BatchPredictRequest request =
         BatchPredictRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .setInputConfig(inputConfig)
             .setOutputConfig(outputConfig)
             .putAllParams(params)

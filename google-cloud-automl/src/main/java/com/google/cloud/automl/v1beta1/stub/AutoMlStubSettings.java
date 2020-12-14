@@ -92,7 +92,6 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -221,7 +220,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
 
             @Override
             public Iterable<Dataset> extractResources(ListDatasetsResponse payload) {
-              return Objects.isNull(payload.getDatasetsList())
+              return payload.getDatasetsList() == null
                   ? ImmutableList.<Dataset>of()
                   : payload.getDatasetsList();
             }
@@ -258,7 +257,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
 
             @Override
             public Iterable<TableSpec> extractResources(ListTableSpecsResponse payload) {
-              return Objects.isNull(payload.getTableSpecsList())
+              return payload.getTableSpecsList() == null
                   ? ImmutableList.<TableSpec>of()
                   : payload.getTableSpecsList();
             }
@@ -297,7 +296,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
 
             @Override
             public Iterable<ColumnSpec> extractResources(ListColumnSpecsResponse payload) {
-              return Objects.isNull(payload.getColumnSpecsList())
+              return payload.getColumnSpecsList() == null
                   ? ImmutableList.<ColumnSpec>of()
                   : payload.getColumnSpecsList();
             }
@@ -333,7 +332,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
 
             @Override
             public Iterable<Model> extractResources(ListModelsResponse payload) {
-              return Objects.isNull(payload.getModelList())
+              return payload.getModelList() == null
                   ? ImmutableList.<Model>of()
                   : payload.getModelList();
             }
@@ -374,7 +373,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
             @Override
             public Iterable<ModelEvaluation> extractResources(
                 ListModelEvaluationsResponse payload) {
-              return Objects.isNull(payload.getModelEvaluationList())
+              return payload.getModelEvaluationList() == null
                   ? ImmutableList.<ModelEvaluation>of()
                   : payload.getModelEvaluationList();
             }
