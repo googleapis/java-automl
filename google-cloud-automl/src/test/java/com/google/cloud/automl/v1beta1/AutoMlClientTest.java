@@ -94,7 +94,7 @@ public class AutoMlClientTest {
     Dataset expectedResponse =
         Dataset.newBuilder()
             .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setExampleCount(1517063674)
             .setCreateTime(Timestamp.newBuilder().build())
@@ -140,7 +140,7 @@ public class AutoMlClientTest {
     Dataset expectedResponse =
         Dataset.newBuilder()
             .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setExampleCount(1517063674)
             .setCreateTime(Timestamp.newBuilder().build())
@@ -186,7 +186,7 @@ public class AutoMlClientTest {
     Dataset expectedResponse =
         Dataset.newBuilder()
             .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setExampleCount(1517063674)
             .setCreateTime(Timestamp.newBuilder().build())
@@ -229,7 +229,7 @@ public class AutoMlClientTest {
     Dataset expectedResponse =
         Dataset.newBuilder()
             .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setExampleCount(1517063674)
             .setCreateTime(Timestamp.newBuilder().build())
@@ -360,7 +360,7 @@ public class AutoMlClientTest {
     Dataset expectedResponse =
         Dataset.newBuilder()
             .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setExampleCount(1517063674)
             .setCreateTime(Timestamp.newBuilder().build())
@@ -669,7 +669,7 @@ public class AutoMlClientTest {
             .setName(
                 AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                     .toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setExampleCount(1517063674)
             .build();
     mockAutoMl.addResponse(expectedResponse);
@@ -713,7 +713,7 @@ public class AutoMlClientTest {
             .setName(
                 AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                     .toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setExampleCount(1517063674)
             .build();
     mockAutoMl.addResponse(expectedResponse);
@@ -754,7 +754,7 @@ public class AutoMlClientTest {
         TableSpec.newBuilder()
             .setName(
                 TableSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]").toString())
-            .setTimeColumnSpecId("time_column_spec_id1558734824")
+            .setTimeColumnSpecId("timeColumnSpecId1156268185")
             .setRowCount(1340416618)
             .setValidRowCount(-406068761)
             .setColumnCount(-122671386)
@@ -799,7 +799,7 @@ public class AutoMlClientTest {
         TableSpec.newBuilder()
             .setName(
                 TableSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]").toString())
-            .setTimeColumnSpecId("time_column_spec_id1558734824")
+            .setTimeColumnSpecId("timeColumnSpecId1156268185")
             .setRowCount(1340416618)
             .setValidRowCount(-406068761)
             .setColumnCount(-122671386)
@@ -932,7 +932,7 @@ public class AutoMlClientTest {
         TableSpec.newBuilder()
             .setName(
                 TableSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]").toString())
-            .setTimeColumnSpecId("time_column_spec_id1558734824")
+            .setTimeColumnSpecId("timeColumnSpecId1156268185")
             .setRowCount(1340416618)
             .setValidRowCount(-406068761)
             .setColumnCount(-122671386)
@@ -980,7 +980,7 @@ public class AutoMlClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]", "[COLUMN_SPEC]")
                     .toString())
             .setDataType(DataType.newBuilder().build())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDataStats(DataStats.newBuilder().build())
             .addAllTopCorrelatedColumns(new ArrayList<ColumnSpec.CorrelatedColumn>())
             .setEtag("etag3123477")
@@ -1029,7 +1029,7 @@ public class AutoMlClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]", "[COLUMN_SPEC]")
                     .toString())
             .setDataType(DataType.newBuilder().build())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDataStats(DataStats.newBuilder().build())
             .addAllTopCorrelatedColumns(new ArrayList<ColumnSpec.CorrelatedColumn>())
             .setEtag("etag3123477")
@@ -1164,7 +1164,7 @@ public class AutoMlClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]", "[COLUMN_SPEC]")
                     .toString())
             .setDataType(DataType.newBuilder().build())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDataStats(DataStats.newBuilder().build())
             .addAllTopCorrelatedColumns(new ArrayList<ColumnSpec.CorrelatedColumn>())
             .setEtag("etag3123477")
@@ -1206,8 +1206,8 @@ public class AutoMlClientTest {
     Model expectedResponse =
         Model.newBuilder()
             .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
-            .setDisplayName("display_name1615086568")
-            .setDatasetId("dataset_id-2115646910")
+            .setDisplayName("displayName1714148973")
+            .setDatasetId("datasetId-345342029")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -1259,8 +1259,8 @@ public class AutoMlClientTest {
     Model expectedResponse =
         Model.newBuilder()
             .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
-            .setDisplayName("display_name1615086568")
-            .setDatasetId("dataset_id-2115646910")
+            .setDisplayName("displayName1714148973")
+            .setDatasetId("datasetId-345342029")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -1312,8 +1312,8 @@ public class AutoMlClientTest {
     Model expectedResponse =
         Model.newBuilder()
             .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
-            .setDisplayName("display_name1615086568")
-            .setDatasetId("dataset_id-2115646910")
+            .setDisplayName("displayName1714148973")
+            .setDatasetId("datasetId-345342029")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -1354,8 +1354,8 @@ public class AutoMlClientTest {
     Model expectedResponse =
         Model.newBuilder()
             .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
-            .setDisplayName("display_name1615086568")
-            .setDatasetId("dataset_id-2115646910")
+            .setDisplayName("displayName1714148973")
+            .setDatasetId("datasetId-345342029")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -1924,8 +1924,8 @@ public class AutoMlClientTest {
             .setName(
                 ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[MODEL_EVALUATION]")
                     .toString())
-            .setAnnotationSpecId("annotation_spec_id60690191")
-            .setDisplayName("display_name1615086568")
+            .setAnnotationSpecId("annotationSpecId1320449605")
+            .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setEvaluatedExampleCount(277565350)
             .build();
@@ -1970,8 +1970,8 @@ public class AutoMlClientTest {
             .setName(
                 ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[MODEL_EVALUATION]")
                     .toString())
-            .setAnnotationSpecId("annotation_spec_id60690191")
-            .setDisplayName("display_name1615086568")
+            .setAnnotationSpecId("annotationSpecId1320449605")
+            .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setEvaluatedExampleCount(277565350)
             .build();
