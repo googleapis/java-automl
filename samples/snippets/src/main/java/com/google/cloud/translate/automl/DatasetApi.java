@@ -149,49 +149,7 @@ public class DatasetApi {
       }
     }
   }
-  // [END automl_translate_list_datasets]
-
-  // [START automl_translate_get_dataset]
-  /**
-   * Demonstrates using the AutoML client to get a dataset by ID.
-   *
-   * @param projectId the Google Cloud Project ID.
-   * @param computeRegion the Region name. (e.g., "us-central1").
-   * @param datasetId the Id of the dataset.
-   */
-  public static void getDataset(String projectId, String computeRegion, String datasetId)
-      throws IOException {
-    // Instantiates a client
-    try (AutoMlClient client = AutoMlClient.create()) {
-
-      // Get the complete path of the dataset.
-      DatasetName datasetFullId = DatasetName.of(projectId, computeRegion, datasetId);
-
-      // Get all the information about a given dataset.
-      Dataset dataset = client.getDataset(datasetFullId);
-
-      // Display the dataset information
-      System.out.println(String.format("Dataset name: %s", dataset.getName()));
-      System.out.println(
-          String.format(
-              "Dataset id: %s",
-              dataset.getName().split("/")[dataset.getName().split("/").length - 1]));
-      System.out.println(String.format("Dataset display name: %s", dataset.getDisplayName()));
-      System.out.println("Translation dataset metadata:");
-      System.out.println(
-          String.format(
-              "\tSource language code: %s",
-              dataset.getTranslationDatasetMetadata().getSourceLanguageCode()));
-      System.out.println(
-          String.format(
-              "\tTarget language code: %s",
-              dataset.getTranslationDatasetMetadata().getTargetLanguageCode()));
-      System.out.println("Dataset create time:");
-      System.out.println(String.format("\tseconds: %s", dataset.getCreateTime().getSeconds()));
-      System.out.println(String.format("\tnanos: %s", dataset.getCreateTime().getNanos()));
-    }
-  }
-  // [END automl_translate_get_dataset]
+  // [END automl_translate_list_datasets]ß
 
   // [START automl_translate_import_data]
   /**
@@ -296,9 +254,6 @@ public class DatasetApi {
       }
       if (ns.get("command").equals("list_datasets")) {
         listDatasets(projectId, computeRegion, ns.getString("filter"));
-      }
-      if (ns.get("command").equals("get_dataset")) {
-        getDataset(projectId, computeRegion, ns.getString("datasetId"));
       }
       if (ns.get("command").equals("import_data")) {
         importData(projectId, computeRegion, ns.getString("datasetId"), ns.getString("path"));

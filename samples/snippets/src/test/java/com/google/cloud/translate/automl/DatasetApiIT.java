@@ -42,7 +42,6 @@ public class DatasetApiIT {
   private PrintStream originalPrintStream;
   private DatasetApi app;
   private String datasetId;
-  private String getdatasetId = "TRL3946265060617537378";
 
   @Before
   public void setUp() {
@@ -102,18 +101,6 @@ public class DatasetApiIT {
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Dataset id:");
-  }
-
-  @Test
-  public void testGetDataset() throws IOException {
-
-    // Act
-    DatasetApi.getDataset(PROJECT_ID, COMPUTE_REGION, getdatasetId);
-
-    // Assert
-    String got = bout.toString();
-
     assertThat(got).contains("Dataset id:");
   }
 }
