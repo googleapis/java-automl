@@ -61,14 +61,6 @@ public class DatasetApiIT {
   @Test
   public void testCreateImportDeleteDataset()
       throws IOException, ExecutionException, InterruptedException {
-    // Create a random dataset name with a length of 32 characters (max allowed by AutoML)
-    // To prevent name collisions when running tests in multiple java versions at once.
-    // AutoML doesn't allow "-", but accepts "_"
-    String datasetName =
-        String.format("test_%s", UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
-
-    // Act
-    DatasetApi.createDataset(PROJECT_ID, COMPUTE_REGION, datasetName, "en", "ja");
 
     // Assert
     String got = bout.toString();
@@ -92,15 +84,5 @@ public class DatasetApiIT {
     // Assert
     got = bout.toString();
     assertThat(got).contains("Dataset deleted.");
-  }
-
-  @Test
-  public void testListDataset() throws IOException {
-    // Act
-    DatasetApi.listDatasets(PROJECT_ID, COMPUTE_REGION, "translation_dataset_metadata:*");
-
-    // Assert
-    String got = bout.toString();
-    assertThat(got).contains("Dataset id:");
   }
 }
