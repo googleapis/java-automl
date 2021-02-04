@@ -21,8 +21,6 @@ import static com.google.common.truth.Truth.assertThat;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.concurrent.ExecutionException;
-
 import com.google.api.gax.rpc.NotFoundException;
 import io.grpc.StatusRuntimeException;
 import org.junit.After;
