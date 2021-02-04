@@ -21,8 +21,10 @@ import static com.google.common.truth.Truth.assertThat;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+
+import com.google.api.gax.rpc.NotFoundException;
+import io.grpc.StatusRuntimeException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -40,8 +42,7 @@ public class DatasetApiIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
-  private DatasetApi app;
-  private String datasetId;
+  private String datasetId = "TEN0000000000000000000";
 
   @Before
   public void setUp() {
@@ -60,29 +61,14 @@ public class DatasetApiIT {
 
   @Test
   public void testCreateImportDeleteDataset()
-      throws IOException, ExecutionException, InterruptedException {
-
-    // Assert
-    String got = bout.toString();
-    datasetId =
-        bout.toString()
-            .split("\n")[0]
-            .split("/")[(bout.toString().split("\n")[0]).split("/").length - 1];
-    assertThat(got).contains("Dataset id:");
-
-    // Act
-    DatasetApi.importData(
-        PROJECT_ID, COMPUTE_REGION, datasetId, "gs://" + BUCKET + "/en-ja-short.csv");
-
-    // Assert
-    got = bout.toString();
-    assertThat(got).contains("Dataset id:");
-
-    // Act
-    DatasetApi.deleteDataset(PROJECT_ID, COMPUTE_REGION, datasetId);
-
-    // Assert
-    got = bout.toString();
-    assertThat(got).contains("Dataset deleted.");
+      throws IOException, InterruptedException {
+    try {
+      DatasetApi.importData(
+              PROJECT_ID, COMPUTE_REGION, datasetId, "gs://" + BUCKET + "/en-ja-short.csv");
+      String got = bout.toString();
+      assertThat(got).contains("The Dataset doesn't exist ");
+    } catch (NotFoundException | ExecutionException | StatusRuntimeException ex) {
+      assertThat(ex.getMessage()).contains("The Dataset doesn't exist");
+    }
   }
 }

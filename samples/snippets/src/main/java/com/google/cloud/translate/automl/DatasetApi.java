@@ -108,9 +108,6 @@ public class DatasetApi {
     ArgumentParser parser = ArgumentParsers.newFor("").build();
     Subparsers subparsers = parser.addSubparsers().dest("command");
 
-    Subparser getDatasetParser = subparsers.addParser("get_dataset");
-    getDatasetParser.addArgument("datasetId");
-
     Subparser importDataParser = subparsers.addParser("import_data");
     importDataParser.addArgument("datasetId");
     importDataParser.addArgument("path");
