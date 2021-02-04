@@ -18,10 +18,10 @@ package com.google.cloud.translate.automl;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.gax.rpc.NotFoundException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import com.google.api.gax.rpc.NotFoundException;
 import io.grpc.StatusRuntimeException;
 import org.junit.After;
 import org.junit.Before;
