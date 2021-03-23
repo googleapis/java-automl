@@ -49,7 +49,6 @@ public class TranslateCreateDatasetTest {
         "Environment variable '%s' is required to perform these tests.".format(varName));
   }
 
-
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
@@ -73,8 +72,7 @@ public class TranslateCreateDatasetTest {
     System.setOut(originalPrintStream);
   }
 
-  @Rule
-  public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
+  @Rule public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
 
   @Test
   public void testCreateDataset() throws IOException, ExecutionException, InterruptedException {
