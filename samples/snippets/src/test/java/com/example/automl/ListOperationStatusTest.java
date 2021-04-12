@@ -69,18 +69,17 @@ public class ListOperationStatusTest {
       ListOperationsRequest listRequest =
           ListOperationsRequest.newBuilder().setName(projectLocation.toString()).build();
       List<String> operationFullPathsToBeDeleted = new ArrayList<>();
-      for (Operation operation :
-          operationsClient.listOperations(listRequest).iterateAll()) {
-          // collect unused operation into the list.
-          operationFullPathsToBeDeleted.add(operation.getName());
+      for (Operation operation : operationsClient.listOperations(listRequest).iterateAll()) {
+        // collect unused operation into the list.
+        operationFullPathsToBeDeleted.add(operation.getName());
       }
 
-      if(operationFullPathsToBeDeleted.size() > 300) {
+      if (operationFullPathsToBeDeleted.size() > 300) {
         for (String operationFullPath : operationFullPathsToBeDeleted) {
           // delete unused operations.
           operationsClient.deleteOperation(operationFullPath);
         }
-      }else{
+      } else {
         // Clear the list since we wont anything with the list.
         operationFullPathsToBeDeleted.clear();
       }
