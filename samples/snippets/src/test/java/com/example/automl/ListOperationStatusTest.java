@@ -19,6 +19,7 @@ package com.example.automl;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.api.gax.rpc.ResourceExhaustedException;
 import com.google.cloud.automl.v1.AutoMlClient;
 import com.google.cloud.automl.v1.LocationName;
 import com.google.longrunning.ListOperationsRequest;
@@ -29,6 +30,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -38,7 +40,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class ListOperationStatusTest {
-  private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
+  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -56,7 +58,7 @@ public class ListOperationStatusTest {
   }
 
   @Before
-  public void setUp() throws IOException {
+  public void setUp() throws IOException, InterruptedException {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     originalPrintStream = System.out;
@@ -75,9 +77,18 @@ public class ListOperationStatusTest {
       }
 
       if (operationFullPathsToBeDeleted.size() > 300) {
+        System.out.println("Cleaning up...");
         for (String operationFullPath : operationFullPathsToBeDeleted) {
           // delete unused operations.
-          operationsClient.deleteOperation(operationFullPath);
+          try {
+            operationsClient.deleteOperation(operationFullPath);
+          } catch (ResourceExhaustedException ex) {
+            // back off for 1 minute and retry
+            TimeUnit.MINUTES.sleep(1);
+          } catch (Exception ex) {
+            throw ex;
+          }
+
         }
       } else {
         // Clear the list since we wont anything with the list.
