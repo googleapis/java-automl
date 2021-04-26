@@ -73,7 +73,10 @@ public class ListOperationStatusTest {
       List<String> operationFullPathsToBeDeleted = new ArrayList<>();
       for (Operation operation : operationsClient.listOperations(listRequest).iterateAll()) {
         // collect unused operation into the list.
-        operationFullPathsToBeDeleted.add(operation.getName());
+        // Filter: deleting already done operations.
+        if (operation.getDone()) {
+          operationFullPathsToBeDeleted.add(operation.getName());
+        }
       }
 
       if (operationFullPathsToBeDeleted.size() > 300) {
