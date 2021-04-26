@@ -74,7 +74,7 @@ public class ListOperationStatusTest {
       for (Operation operation : operationsClient.listOperations(listRequest).iterateAll()) {
         // collect unused operation into the list.
         // Filter: deleting already done operations.
-        if (operation.getDone()) {
+        if (operation.getDone() && !operation.hasError()) {
           operationFullPathsToBeDeleted.add(operation.getName());
         }
       }
