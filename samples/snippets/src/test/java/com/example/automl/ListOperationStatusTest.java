@@ -85,8 +85,10 @@ public class ListOperationStatusTest {
           // delete unused operations.
           try {
             operationsClient.deleteOperation(operationFullPath);
+            System.out.printf("Deleted: %s \n", operationFullPath);
           } catch (ResourceExhaustedException ex) {
             // back off for 1 minute and retry
+            System.out.println("Backing off for 1 minute due to Resource exhaustion.");
             TimeUnit.MINUTES.sleep(1);
           } catch (Exception ex) {
             throw ex;
