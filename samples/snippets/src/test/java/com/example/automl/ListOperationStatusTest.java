@@ -64,7 +64,7 @@ public class ListOperationStatusTest {
     originalPrintStream = System.out;
     System.setOut(out);
 
-    // if the LRO status count more than 300, delete all operations.
+    // if the LRO status count more than 300, delete half of operations.
     try (AutoMlClient client = AutoMlClient.create()) {
       OperationsClient operationsClient = client.getOperationsClient();
       LocationName projectLocation = LocationName.of(PROJECT_ID, "us-central1");
@@ -81,11 +81,11 @@ public class ListOperationStatusTest {
 
       if (operationFullPathsToBeDeleted.size() > 300) {
         System.out.println("Cleaning up...");
-        for (String operationFullPath : operationFullPathsToBeDeleted) {
+        for (String operationFullPath :
+            operationFullPathsToBeDeleted.subList(0, operationFullPathsToBeDeleted.size() / 2)) {
           // delete unused operations.
           try {
             operationsClient.deleteOperation(operationFullPath);
-            System.out.printf("Deleted: %s \n", operationFullPath);
           } catch (ResourceExhaustedException ex) {
             // back off for 1 minute and retry
             System.out.println("Backing off for 1 minute due to Resource exhaustion.");
