@@ -85,9 +85,9 @@ public class ListOperationStatusTest {
 
         ExponentialBackOff exponentialBackOff = new ExponentialBackOff.Builder()
             .setInitialIntervalMillis(60000)
-            .setMaxElapsedTimeMillis(ExponentialBackOff.DEFAULT_MAX_ELAPSED_TIME_MILLIS)
+            .setMaxElapsedTimeMillis(180000)
             .setRandomizationFactor(0.5)
-            .setMultiplier(1.2)
+            .setMultiplier(1.1)
             .setMaxIntervalMillis(ExponentialBackOff.DEFAULT_MAX_INTERVAL_MILLIS)
             .build();
 
