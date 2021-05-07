@@ -41,7 +41,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class ListOperationStatusTest {
-  private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
+  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -83,23 +83,28 @@ public class ListOperationStatusTest {
       if (operationFullPathsToBeDeleted.size() > 300) {
         System.out.println("Cleaning up...");
 
-        ExponentialBackOff exponentialBackOff = new ExponentialBackOff.Builder()
-            .setInitialIntervalMillis(60000)
-            .setMaxElapsedTimeMillis(180000)
-            .setRandomizationFactor(0.5)
-            .setMultiplier(1.1)
-            .setMaxIntervalMillis(ExponentialBackOff.DEFAULT_MAX_INTERVAL_MILLIS)
-            .build();
 
         for (String operationFullPath :
             operationFullPathsToBeDeleted.subList(0, operationFullPathsToBeDeleted.size() / 2)) {
+          // retry_interval * (random value in range [1 - randomization_factor, 1 + randomization_factor])
+          ExponentialBackOff exponentialBackOff = new ExponentialBackOff.Builder()
+              .setInitialIntervalMillis(60000)
+              .setMaxElapsedTimeMillis(300000)
+              .setRandomizationFactor(0.5)
+              .setMultiplier(1.1)
+              .setMaxIntervalMillis(80000)
+              .build();
+
           // delete unused operations.
           try {
             operationsClient.deleteOperation(operationFullPath);
           } catch (ResourceExhaustedException ex) {
-            // exponential back off and retry. (1 min * 1.2 * random_val)
-            System.out.println("Backing off for 1 minute due to Resource exhaustion.");
+            // exponential back off and retry.
+            System.out.println("Backing off for (1 minute + random_val) due to Resource exhaustion.");
             long backOffInMillis = exponentialBackOff.nextBackOffMillis();
+            if (backOffInMillis < 0) {
+              break;
+            }
             System.out.println("Backing off" + backOffInMillis);
             TimeUnit.MILLISECONDS.sleep(backOffInMillis);
           } catch (Exception ex) {
