@@ -19,6 +19,7 @@ package com.example.automl;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.gax.rpc.ResourceExhaustedException;
 import com.google.cloud.automl.v1.AutoMlClient;
 import com.google.cloud.automl.v1.LocationName;
@@ -81,19 +82,29 @@ public class ListOperationStatusTest {
 
       if (operationFullPathsToBeDeleted.size() > 300) {
         System.out.println("Cleaning up...");
+
+        ExponentialBackOff exponentialBackOff = new ExponentialBackOff.Builder()
+            .setInitialIntervalMillis(60000)
+            .setMaxElapsedTimeMillis(ExponentialBackOff.DEFAULT_MAX_ELAPSED_TIME_MILLIS)
+            .setRandomizationFactor(0.5)
+            .setMultiplier(1.2)
+            .setMaxIntervalMillis(ExponentialBackOff.DEFAULT_MAX_INTERVAL_MILLIS)
+            .build();
+
         for (String operationFullPath :
             operationFullPathsToBeDeleted.subList(0, operationFullPathsToBeDeleted.size() / 2)) {
           // delete unused operations.
           try {
             operationsClient.deleteOperation(operationFullPath);
           } catch (ResourceExhaustedException ex) {
-            // back off for 1 minute and retry
+            // exponential back off and retry. (1 min * 1.2 * random_val)
             System.out.println("Backing off for 1 minute due to Resource exhaustion.");
-            TimeUnit.MINUTES.sleep(1);
+            long backOffInMillis = exponentialBackOff.nextBackOffMillis();
+            System.out.println("Backing off" + backOffInMillis);
+            TimeUnit.MILLISECONDS.sleep(backOffInMillis);
           } catch (Exception ex) {
             throw ex;
           }
-
         }
       } else {
         // Clear the list since we wont anything with the list.
