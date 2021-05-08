@@ -86,7 +86,7 @@ public class ListOperationStatusTest {
 
         for (String operationFullPath :
             operationFullPathsToBeDeleted.subList(0, operationFullPathsToBeDeleted.size() / 2)) {
-          // retry_interval * (random value in range [1 - randomization_factor, 1 + randomization_factor])
+          // retry_interval * (random value in range [1 - rand_factor, 1 + rand_factor])
           ExponentialBackOff exponentialBackOff = new ExponentialBackOff.Builder()
               .setInitialIntervalMillis(60000)
               .setMaxElapsedTimeMillis(300000)
@@ -100,8 +100,9 @@ public class ListOperationStatusTest {
             operationsClient.deleteOperation(operationFullPath);
           } catch (ResourceExhaustedException ex) {
             // exponential back off and retry.
-            System.out.println("Backing off for (1 minute + random_val) due to Resource exhaustion.");
             long backOffInMillis = exponentialBackOff.nextBackOffMillis();
+            System.out.printf("Backing off for %d milliseconds "
+                + "due to Resource exhaustion.\n", backOffInMillis);
             if (backOffInMillis < 0) {
               break;
             }
