@@ -63,7 +63,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-automl</artifactId>
-        <version>1.5.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-automl:current} -->
+        <version>1.5.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-automl:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -84,11 +84,6 @@
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-automl-v1</artifactId>
         <version>1.5.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-automl-v1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-automl</artifactId>
-        <version>1.5.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-automl:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
