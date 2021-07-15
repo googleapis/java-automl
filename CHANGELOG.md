@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.5.6](https://www.github.com/googleapis/java-automl/compare/v1.5.5...v1.5.6) (2021-07-15)
+
+
+### Bug Fixes
+
+* owlbot post-processor should generate README ([#1154](https://www.github.com/googleapis/java-automl/issues/1154)) ([#788](https://www.github.com/googleapis/java-automl/issues/788)) ([656908e](https://www.github.com/googleapis/java-automl/commit/656908ef646730f298a61ba64f3e445226718d78)), closes [#1146](https://www.github.com/googleapis/java-automl/issues/1146) [#1147](https://www.github.com/googleapis/java-automl/issues/1147)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.137.0 ([#783](https://www.github.com/googleapis/java-automl/issues/783)) ([1cf04cb](https://www.github.com/googleapis/java-automl/commit/1cf04cbff33de897d7febd858162e65a8b6b44b8))
+* update dependency com.google.cloud:google-cloud-storage to v1.118.0 ([#787](https://www.github.com/googleapis/java-automl/issues/787)) ([82d55ec](https://www.github.com/googleapis/java-automl/commit/82d55ec9575891698d6c94abac53c33c8d90589f))
+
 ### [1.5.5](https://www.github.com/googleapis/java-automl/compare/v1.5.4...v1.5.5) (2021-07-05)
 
 
