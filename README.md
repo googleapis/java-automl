@@ -111,7 +111,8 @@ use this Cloud Auto ML Client Library.
 
 ## Samples
 
-Samples are in the [`samples/`](https://github.com/googleapis/java-automl/tree/master/samples) directory.
+Samples are in the [`samples/`](https://github.com/googleapis/java-automl/tree/master/samples) directory. The samples' `README.md`
+has instructions for running the samples.
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
