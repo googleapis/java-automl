@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://www.github.com/googleapis/java-automl/compare/v1.5.5...v1.6.0) (2021-08-04)
+
+
+### Features
+
+* configure initial sp version ([#827](https://www.github.com/googleapis/java-automl/issues/827)) ([773a3d6](https://www.github.com/googleapis/java-automl/commit/773a3d69dc0c0fe8d68b4117d0e94fc5526807fb))
+
 ### [1.5.5](https://www.github.com/googleapis/java-automl/compare/v1.5.4...v1.5.5) (2021-07-05)
 
 
