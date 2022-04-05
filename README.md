@@ -1,3 +1,7 @@
+:bell: **Please visit [java-aiplatform](https://github.com/googleapis/java-aiplatform) for the new Java Vertex AI client.**
+
+Vertex AI is our next generation AI Platform, with many new features that are unavailable in the current platform. [Migrate your resources to Vertex AI](https://cloud.google.com/vertex-ai/docs/start/migrating-to-vertex-ai) to get the latest machine learning features, simplify end-to-end journeys, and productionize models with MLOps.
+
 # Google Cloud Auto ML Client for Java
 
 Java idiomatic client for [Cloud Auto ML][product-docs].
@@ -108,12 +112,6 @@ You'll need to obtain the `google-cloud-automl` library.  See the [Quickstart](#
 to add `google-cloud-automl` as a dependency in your code.
 
 ## About Cloud Auto ML
-
-AutoML API Java Client is now available in the new Vertex AI.
-Migrate your AutoML resources to Vertex AI to get the latest features
-like data labeling, AutoML-powered training, and endpoint management. 
-
-[Migrate to Vertex AI documentation](https://cloud.google.com/vertex-ai/docs/start/migrating-to-vertex-ai)
 
 [Cloud Auto ML](https://cloud.google.com/automl/docs/) makes the power 
 of machine learning available to you even if you have limited knowledge 
