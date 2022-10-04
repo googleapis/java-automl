@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.3.16](https://github.com/googleapis/java-automl/compare/v2.3.15...v2.3.16) (2022-10-04)
+
+
+### Documentation
+
+* [owlbot-java] samples do not need deploy plugin and deps upgrade ([#1583](https://github.com/googleapis/java-automl/issues/1583)) ([#1265](https://github.com/googleapis/java-automl/issues/1265)) ([b110b30](https://github.com/googleapis/java-automl/commit/b110b30423aec31cbd644cfb7423a7183908355b))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.8.17 ([#1272](https://github.com/googleapis/java-automl/issues/1272)) ([e656904](https://github.com/googleapis/java-automl/commit/e656904069b525e70196af36548705ba747ef776))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.18 ([#1274](https://github.com/googleapis/java-automl/issues/1274)) ([020ac8f](https://github.com/googleapis/java-automl/commit/020ac8f037cafbb5b333dbe79870b910db029622))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.19 ([#1276](https://github.com/googleapis/java-automl/issues/1276)) ([2b96eef](https://github.com/googleapis/java-automl/commit/2b96eef76689e6c050b11cabe2da5eb4344f92d7))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#1278](https://github.com/googleapis/java-automl/issues/1278)) ([35a7c25](https://github.com/googleapis/java-automl/commit/35a7c25b12a9b5a081f31222263d514eea6a0ad0))
+
 ## [2.3.15](https://github.com/googleapis/java-automl/compare/v2.3.14...v2.3.15) (2022-09-27)
 
 
